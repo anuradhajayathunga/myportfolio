@@ -108,7 +108,7 @@ const Contact = () => {
                     Phone
                   </p>
                   <p className="text-lg font-semibold text-zinc-900 dark:text-white">
-                    +94 759-089-188
+                    +94 743-119-199
                   </p>
                 </div>
               </div>

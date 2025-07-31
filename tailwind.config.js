@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const isProd = process.env.NODE_ENV === 'production';
-const prefix = isProd ? '/myportfolio' : '';
+const isProd = process.env.NODE_ENV === "production";
+const prefix = isProd ? "/myportfolio" : "";
 
 module.exports = {
   darkMode: ["class"],
@@ -132,6 +132,25 @@ module.exports = {
         card: "0 4px 12px rgba(15, 23, 42, 0.08)",
         hover: "0 6px 16px rgba(37, 99, 235, 0.15)",
         inset: "inset 0 2px 4px 0 rgba(15, 23, 42, 0.1)",
+      },
+      keyframes: {
+        float1: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-5px)" },
+        },
+        float2: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-7px)" },
+        },
+        float3: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        float1: "float1 3s ease-in-out infinite",
+        float2: "float2 4s ease-in-out infinite",
+        float3: "float3 5s ease-in-out infinite",
       },
     },
   },

@@ -17,15 +17,15 @@ const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 const badgesData = [
   {
     id: 1,
-    containerStyles: "absolute top-[24%] -left-[5rem]",
-    icon: <RiBriefcase4Fill className="text-primary" />,
+    containerStyles: "absolute top-[24%] -left-[5rem] animate-float1",
+    icon: <RiBriefcase4Fill className="text-black dark:text-white " />,
     endCountNum: 5,
     endCountText: "+",
     badgeText: "Years of Experience",
   },
   {
     id: 2,
-    containerStyles: "absolute top-[80%] -left-[1rem]",
+    containerStyles: "absolute top-[80%] -left-[1rem] animate-float2",
     icon: <RiTodoFill className="text-green-500" />,
     endCountNum: 25,
     endCountText: "+",
@@ -33,7 +33,7 @@ const badgesData = [
   },
   {
     id: 3,
-    containerStyles: "absolute top-[55%] -right-20",
+    containerStyles: "absolute top-[55%] -right-20 animate-float3",
     icon: <RiTeamFill className="text-blue-600" />,
     endCountNum: 100,
     endCountText: "+",
@@ -45,10 +45,10 @@ const Hero = () => {
   return (
     <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 ">
       {/* bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none" */}
-      <div className="container mx-auto">
-        <div className="flex justify-between gap-x-8">
+      <div className="container  mx-auto">
+        <div className="flex items-center justify-between gap-x-12">
           {/* text */}
-          <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-left xl:text-left">
+          <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-auto text-left  ">
             <div className="text-sm  font-semibold mb-0 text-black tracking-[0px] dark:text-white">
               Hello, I'm a
             </div>
@@ -77,7 +77,7 @@ const Hero = () => {
               iconsStyles=" text-foreground text-[30px] hover:scale-110 transition-all "
             />
             {/* image */}
-            <div className="flex xl:hidden relative  w-auto mt-10">
+            <div className="flex-col xl:hidden relative mx-auto px-20 mt-10">
               {badgesData.map((badge) => (
                 <Badge
                   key={badge.id}
@@ -89,16 +89,30 @@ const Hero = () => {
               ))}
               <div
                 className="bg-hero_shape2_light 
-                dark:bg-shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2"
+                dark:bg-shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2 blur-[100px] opacity-60"
               ></div>
               <DevImg
-                containerStyles="bg-hero_shape1 w-[510px] h-[462px] bg-no-repeat relative bg-bottom"
-                imgSrc={`${prefix}/hero/developer.png`}
-              />
+                containerStyles=" w-[510px] h-[462px] bg-no-repeat relative bg-bottom"
+                lightbg={`${prefix}/hero/shape-1.svg`}
+              bg={`${prefix}/hero/shape-1-dark.svg`}
+              imgSrc={`${prefix}/hero/developer.png`}
+            />
             </div>
           </div>
           {/* image */}
-          <div className="hidden xl:flex relative ">
+          <div className="hidden xl:flex xl:mx-auto relative ">
+            {/* Blurred Gradient Background */}
+            <div className="absolute -z-10 w-[320px] h-[320px] md:w-[420px] md:h-[420px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-10 -right-10 animate-pulse" />
+
+            {/* Dev Image */}
+            <DevImg
+              containerStyles="w-[260px] h-[260px] md:w-[510px] md:h-[462px] xl:w-[600px] xl:h-[500px] drop-shadow-2xl"
+              lightbg={`${prefix}/hero/shape-1.svg`}
+              bg={`${prefix}/hero/shape-1-dark.svg`}
+              imgSrc={`${prefix}/hero/developer.png`}
+            />
+
+            {/* Floating Badges */}
             {badgesData.map((badge) => (
               <Badge
                 key={badge.id}
@@ -108,14 +122,6 @@ const Hero = () => {
                 badgeText={badge.badgeText}
               />
             ))}
-            <div
-              className="bg-hero_shape2_light 
-                dark:bg-shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2"
-            ></div>
-            <DevImg
-              containerStyles="bg-hero_shape1 w-[510px] h-[462px] bg-no-repeat relative bg-bottom"
-                imgSrc={`${prefix}/hero/developer.png`}
-            />
           </div>
         </div>
         {/* icons */}

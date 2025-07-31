@@ -14,6 +14,8 @@ import { motion } from "framer-motion";
 import DevImg from "./DevImg";
 import Image from "next/image";
 import { useState } from "react";
+import BlurBlob from "./ui/BlurBlob";
+import { useTheme } from "next-themes";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
 const reviewData = [
@@ -86,15 +88,18 @@ const positions = [
 ];
 const Review = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const { theme } = useTheme();
   return (
-    <section className="relative mb-0 xl:py-12 bg-light-secondary bg-opacity-5 dark:bg-dark-secondary dark:bg-opacity-5">
+    <section className="relative mb-0 xl:py-12">
       <div className="container max-auto">
         <div className="flex flex-col xl:flex-row justify-between">
           {/* image */}
           <div className="hidden xl:flex flex-1 relative">
-            <DevImg
-              containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
+            <BlurBlob position="center" />
+             <DevImg
+              containerStyles=" w-[505px] h-[505px] bg-no-repeat relative"
+              lightbg={`${prefix}/about/shape-light.svg`}
+              bg={`${prefix}/about/shape-dark.svg`}
               imgSrc={`${prefix}/reviews/developer.png`}
             />
 
@@ -110,7 +115,7 @@ const Review = () => {
         ${isActive ? "ring-2 ring-light-primary dark:bg-dark-primary" : ""}
         border-white dark:border-dark-muted`}
                   initial={{ y: 0 }}
-                  animate={{ y: [0, -6, 0] }} //scale: 1, opacity: 1,
+                  animate={{ y: [0, -5, 0] }} //scale: 1, opacity: 1,
                   transition={{
                     duration: 2,
                     repeat: Infinity,

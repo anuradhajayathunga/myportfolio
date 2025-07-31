@@ -1,21 +1,21 @@
-import { Button } from "./ui/button"
-import Link from "next/link"
+import BlurBlob from "./ui/BlurBlob";
+import { Button } from "./ui/button";
+import Link from "next/link";
 const Contactme = () => {
   return (
-    <section className="-mb-6 -mt-2">
-      <div className="container p-10 flex flex-col items-center bg-light-text  bg-blur-lg hover:shadow-hover rounded-sm dark:bg-dark-text z-50">
-        <h2 className="text-4xl font-bold text-dark-text dark:text-light-text max-w-[700px] text-center mb-4">
+    <section className="-mb-6 mt-12">
+      <div className="container p-10 flex flex-col items-center rounded-xl backdrop-blur-lg bg-white/30 dark:bg-black/50 shadow-md z-30">
+        {/* <BlurBlob size={300} lightOpacity={0.3} darkOpacity={0.5} /> */}
+
+        <h2 className="text-4xl font-bold text-light-text dark:text-dark-text max-w-[700px] text-center mb-4">
           Prepared to turn your ideas into reality? I'm here to help you.
         </h2>
         <Link href="/contact">
-              <Button className="">
-                Contact Me
-              </Button>
-          </Link>
+          <Button className="">Contact Me</Button>
+        </Link>
       </div>
-      
     </section>
-  )
-}
+  );
+};
 
-export default Contactme
+export default Contactme;

@@ -1,24 +1,32 @@
-import { Outfit } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-// component
+
+// components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// themeprovider
 import ThemeProvider from "@/components/ThemeProvider";
 
-const outfit = Outfit({ subsets: ["latin"] });
+// Load Poppins font
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"], // optional: choose what you need
+  display: "swap",
+});
 
 export const metadata = {
   title: "Anuradha Jayathunga | Portfolio",
   description: "Modern portfolio showcasing my work and expertise",
   keywords: "nextjs, react, ui/ux",
   authors: "Anuradha Jayathunga",
+  icons: {
+    icon: "./favicon.ico", 
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={outfit.className}>
+      <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
           {children}

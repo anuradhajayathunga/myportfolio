@@ -9,7 +9,7 @@ const Badge = ({
   badgeText,
 }) => {
   return (
-    <div className={`badge ${containerStyles} flex items-center`}>
+    <div className={` ${containerStyles} flex items-center p-4 rounded-xl backdrop-blur-md bg-white/20 dark:bg-black/30 shadow-xl z-20`}>
 
   {/* Icon Section */}
   <div className="text-3xl text-primary mr-2">
@@ -20,7 +20,7 @@ const Badge = ({
   <div className="flex items-center flex-1 overflow-hidden">
 
     {/* CountUp Component */}
-    <div className="text-4xl leading-none font-bold text-black mr-2">
+    <div className="text-4xl leading-none font-bold text-black dark:text-white mr-2">
       <CountUp
         start={0} // Optional: Specify a starting number (default is 0)
         end={endCountNum}
@@ -32,7 +32,7 @@ const Badge = ({
     </div>
 
     {/* Badge Text */}
-    <div className="max-w-[800px] leading-none text-sm font-semibold text-black ">
+    <div className="text-black dark:text-white max-w-[800px] leading-none text-sm font-semibold">
       {badgeText}
     </div>
 

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { GanttChartSquare, Blocks, Gem } from "lucide-react";
+import { Frame  , Image , TabletSmartphone ,LayoutPanelTop  } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -10,33 +10,34 @@ import {
 } from "@/components/ui/card";
 
 const servicesData = [
+ 
   {
-    icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
+    icon: <LayoutPanelTop   size={72} strokeWidth={0.8} />,
+    title: "Web Design",
+    subtitle: "112 PROJECTS",
+    description:
+      "We create responsive, eye-catching websites that work on every device. From layout and navigation to interactivity and visuals, our web design services give your business an unforgettable online presence.",
+  },
+  {
+    icon: <TabletSmartphone  size={72} strokeWidth={0.8} />,
+    title: "Mobile app",
+    subtitle: "50 PROJECTS",
+    description:
+      "Mobile app development involves creating software  From layout and navigation to interactivity and visuals, our web design services give your business an unforgettable online presence.",
+  },
+   {
+    icon: <Frame   size={72} />,
     title: "UI & UX Design",
     subtitle: "198 PROJECTS",
     description:
       "Design intuitive, engaging user interfaces and experiences that capture the attention of the user and increase the usability of a digital product. Let our UI & UX be driven by user-centered design so that your products are not just good-looking but also work well and are easy to use.",
   },
   {
-    icon: <Blocks size={72} strokeWidth={0.8} />,
+    icon: <Image  size={72} strokeWidth={0.8} />,
     title: "Graphic Design",
     subtitle: "35 PROJECTS",
     description:
       "Bringing your brilliant ideas into spectacular visuals that convey your brand’s message. Our graphic design services include branding, logo design, marketing materials, and digital content so your visuals stand out.",
-  },
-  {
-    icon: <Gem size={72} strokeWidth={0.8} />,
-    title: "Web Design",
-    subtitle: "112 PROJECTS",
-    description:
-      "We create responsive, eye-catching websites that work on every device. From layout and navigation to interactivity and visuals, our web design services give your business an unforgettable online presence.",
-  },
-  {
-    icon: <Gem size={72} strokeWidth={0.8} />,
-    title: "Web Design",
-    subtitle: "112 PROJECTS",
-    description:
-      "We create responsive, eye-catching websites that work on every device. From layout and navigation to interactivity and visuals, our web design services give your business an unforgettable online presence.",
   },
 ];
 

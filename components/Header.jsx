@@ -65,7 +65,7 @@ const Header = () => {
           {/* Theme Toggle */}
           <ThemeToggler />
           {/* CTA Button */}
-          <Link href="#contact" className="hidden xl:block">
+          <Link href="/contact" className="hidden xl:block">
             <Button variant="outline" className="gap-2">
               LET'S TALK
             </Button>

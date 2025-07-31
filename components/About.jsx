@@ -1,3 +1,4 @@
+"use client";
 import DevImg from "./DevImg";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -16,6 +17,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import BlurBlob from "./ui/BlurBlob";
+import { useTheme } from "next-themes";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
 const infoData = [
@@ -23,10 +26,10 @@ const infoData = [
   //   icon: <User2 className="text-primary" size={20} />, // Tomato color
   //   text: "Anuradha Jayathunga",
   // },
-  {
-    icon: <PhoneCall className="text-primary" size={20} />, // Lime Green color
-    text: "+94 759 089 188",
-  },
+  // {
+  //   icon: <PhoneCall className="text-primary" size={20} />, // Lime Green color
+  //   text: "+94 759 089 188",
+  // },
   {
     icon: <MailIcon className="text-primary" size={20} />, // Steel Blue color
     text: "ishiwaraanuradha@gmail.com",
@@ -126,7 +129,7 @@ const About = () => {
   const getData = (arr, title) => {
     return arr.find((item) => item.title === title);
   };
-
+  const { theme } = useTheme();
   return (
     <section id="about" className="xl:h-[860px] pt-72  xl:py-24 scroll-mt-20">
       <div className="container mx-auto">
@@ -143,8 +146,14 @@ const About = () => {
         <div className="flex flex-col xl:flex-row">
           {/* image */}
           <div className="hidden xl:flex flex-1 relative">
+            {/* Blurred SVG shape */}
+            <BlurBlob position="center" />
+
+            {/* Developer image */}
             <DevImg
-              containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
+              containerStyles=" w-[505px] h-[505px] bg-no-repeat relative"
+              lightbg={`${prefix}/about/shape-light.svg`}
+              bg={`${prefix}/about/shape-dark.svg`}
               imgSrc={`${prefix}/about/developer.png`}
             />
           </div>
@@ -176,9 +185,9 @@ const About = () => {
                 <TabsContent value="personal">
                   <div className="text-left xl:text-left xl:max-w-[600px]">
                     <h3 className="h3 mb-2 ">
-                      A story of hardcore and perseverance.
+                      A story of hardcore and perseverance
                     </h3>
-                    <p className="text-light-muted dark:text-dark-muted text-lg mb-2 font-light ">
+                    <p className="text-light-text dark:text-dark-muted text-lg mb-2 font-light ">
                       Hi I'm Anuradha Jayathunga, a passionate UI/UX designer
                       based in the Sri Lanka.Welcome to portfolio world.Brief
                       description with insights into myself, my vocational
@@ -196,7 +205,7 @@ const About = () => {
                         <div key={index} className="flex items-center mb-2">
                           <div className="flex-shrink-0">{item.icon}</div>
                           <div className="ml-2">
-                            <div className="text-md font-medium text-light-secondary dark:text-dark-secondary">
+                            <div className="text-[16px] font-normal text-light-secondary dark:text-dark-secondary">
                               {item.text}
                             </div>
                           </div>
@@ -215,7 +224,7 @@ const About = () => {
                         </Button>
                       </Link>
                       <Button variant="outline" className="gap-2">
-                        <a href="/about/Anuradha's CV.pdf" download>
+                        <a href={`${prefix}/about/Anuradha's CV.pdf`} download>
                           DOWNLOAD CV
                         </a>
                         <Download size={16} className="ml-1" />
