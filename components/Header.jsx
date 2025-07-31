@@ -25,7 +25,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header 
+    <header
       className={`sticky  bg-light-base dark:bg-dark-base top-0 z-50 w-full transition-all ${
         isScrolled
           ? "bg-opacity-50 dark:bg-opacity-50 backdrop-blur-lg shadow-md z-50 "
@@ -39,10 +39,10 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden xl:flex gap-x-10 items-center">
           {[
-            { label: "Home", href: "#top" },
-            { label: "About", href: "#about" },
-            { label: "Services", href: "#services" },
-            { label: "My Work", href: "#mywork" },
+            { label: "Home", href: "/" },
+            { label: "About", href: "/#about" },
+            { label: "Services", href: "/#services" },
+            { label: "My Work", href: "/#mywork" },
             { label: "Contact", href: "/contact" },
           ].map((link) => (
             <Link

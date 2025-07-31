@@ -215,7 +215,7 @@ const About = () => {
                         </Button>
                       </Link>
                       <Button variant="outline" className="gap-2">
-                        <a href="/sample-resume.pdf" download>
+                        <a href="/about/Anuradha's CV.pdf" download>
                           DOWNLOAD CV
                         </a>
                         <Download size={16} className="ml-1" />
