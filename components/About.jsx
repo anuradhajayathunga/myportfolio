@@ -131,7 +131,7 @@ const About = () => {
   };
   const { theme } = useTheme();
   return (
-    <section id="about" className="xl:h-[860px] pt-72  xl:py-24 scroll-mt-20">
+    <section id="about" className="xl:h-[860px] pt-12  xl:py-24 scroll-mt-20">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-between">
           <div className="text-center xl:text-left">

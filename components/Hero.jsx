@@ -48,11 +48,11 @@ const Hero = () => {
       <div className="container  mx-auto">
         <div className="flex items-center justify-between gap-x-12">
           {/* text */}
-          <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-auto text-left  ">
+          <div className="flex max-w-[600px] flex-col justify-center xl:mx-auto text-left  ">
             <div className="text-sm  font-semibold mb-0 text-black tracking-[0px] dark:text-white">
               Hello, I'm a
             </div>
-            <h1 className="text-7xl mb-4 font-black capitalize">
+            <h1 className=" text-5xl md:text-8xl lg:text-7xl mb-4 font-black capitalize">
               frontend web{" "}
               <span className="text-light-primary dark:text-dark-primary font-black underline">
                 developer
@@ -77,7 +77,7 @@ const Hero = () => {
               iconsStyles=" text-foreground text-[30px] hover:scale-110 transition-all "
             />
             {/* image */}
-            <div className="flex-col xl:hidden relative mx-auto px-20 mt-10">
+            {/* <div className="hidden sm:block flex-col lg:hidden relative px-20 mt-10">
               {badgesData.map((badge) => (
                 <Badge
                   key={badge.id}
@@ -87,20 +87,18 @@ const Hero = () => {
                   badgeText={badge.badgeText}
                 />
               ))}
-              <div
-                className="bg-hero_shape2_light 
-                dark:bg-shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2 blur-[100px] opacity-60"
-              ></div>
+              <div className="absolute -z-10 w-[320px] h-[320px] md:w-[420px] md:h-[420px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-10 -right-10 animate-pulse" />
+
               <DevImg
-                containerStyles=" w-[510px] h-[462px] bg-no-repeat relative bg-bottom"
+                containerStyles=" w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-no-repeat relative bg-bottom"
                 lightbg={`${prefix}/hero/shape-1.svg`}
-              bg={`${prefix}/hero/shape-1-dark.svg`}
-              imgSrc={`${prefix}/hero/developer.png`}
-            />
-            </div>
+                bg={`${prefix}/hero/shape-1-dark.svg`}
+                imgSrc={`${prefix}/hero/developer.png`}
+              />
+            </div> */}
           </div>
           {/* image */}
-          <div className="hidden xl:flex xl:mx-auto relative ">
+          <div className="hidden lg:flex xl:mx-auto relative ">
             {/* Blurred Gradient Background */}
             <div className="absolute -z-10 w-[320px] h-[320px] md:w-[420px] md:h-[420px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-10 -right-10 animate-pulse" />
 
