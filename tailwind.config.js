@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const isProd = process.env.NODE_ENV === 'production';
+const prefix = isProd ? '/myportfolio' : '';
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -109,20 +112,21 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      backgroundImage: {
-        hero: "url(/hero/hero-bg.png)",
-        hero_shape1: "url(/hero/shape-1.svg)",
-        hero_shape2_light: "url(/hero/shape-2-light.svg)",
-        hero_shape2_dark: "url(/hero/shape-2-dark.svg)",
-        about_shape_light: "url(/about/shape-light.svg)",
-        about_shape_dark: "url(/about/shape-dark.svg)",
-        dots_light: "url(/dots-light.svg)",
-        dots_dark: "url(/dots-dark.svg)",
-        work_project_bg_light: "url(/work/project-bg-light.png)",
-        work_project_bg_dark: "url(/work/project-bg-dark.png)",
-        contact_light: "url(/contact/illustration-light.svg)",
-        contact_dark: "url(/contact/illustration-dark.svg)",
-      },
+      // ✅ Add dynamic path handling here
+      backgroundImage: (theme) => ({
+        hero: `url('${prefix}/hero/hero-bg.png')`,
+        hero_shape1: `url('${prefix}/hero/shape-1.svg')`,
+        hero_shape2_light: `url('${prefix}/hero/shape-2-light.svg')`,
+        hero_shape2_dark: `url('${prefix}/hero/shape-2-dark.svg')`,
+        about_shape_light: `url('${prefix}/about/shape-light.svg')`,
+        about_shape_dark: `url('${prefix}/about/shape-dark.svg')`,
+        dots_light: `url('${prefix}/dots-light.svg')`,
+        dots_dark: `url('${prefix}/dots-dark.svg')`,
+        work_project_bg_light: `url('${prefix}/work/project-bg-light.png')`,
+        work_project_bg_dark: `url('${prefix}/work/project-bg-dark.png')`,
+        contact_light: `url('${prefix}/contact/illustration-light.svg')`,
+        contact_dark: `url('${prefix}/contact/illustration-dark.svg')`,
+      }),
       boxShadow: {
         // Subtle professional shadows
         card: "0 4px 12px rgba(15, 23, 42, 0.08)",
