@@ -24,7 +24,7 @@ const reviewData = [
     name: "Sarah M. ",
     title: " Startup Founder",
     comment:
-      "Exceptional work! [Designer] completely transformed our mobile app interface. The user flow is now seamless and our beta testers are giving amazing feedback. They understood our vision perfectly and delivered beyond expectations. Communication was excellent throughout the project. Highly recommend!",
+      "Exceptional work! Anuradha completely transformed our mobile app interface. The user flow is now seamless and our beta testers are giving amazing feedback. They understood our vision perfectly and delivered beyond expectations. Communication was excellent throughout the project. Highly recommend!",
     date: "date",
     rating: 5,
   },
@@ -33,7 +33,7 @@ const reviewData = [
     name: "Michael T",
     title: "Business Owner",
     comment:
-      "Outstanding designer! [Designer] created a beautiful and functional e-commerce site that increased our conversion rate by 35% within the first month. Their attention to detail and understanding of user psychology is impressive. Professional, timely, and easy to work with. Will definitely hire again!",
+      "Outstanding designer! Anuradha created a beautiful and functional e-commerce site that increased our conversion rate by 35% within the first month. Their attention to detail and understanding of user psychology is impressive. Professional, timely, and easy to work with. Will definitely hire again!",
     date: "date",
     rating: 5,
   },
@@ -42,7 +42,7 @@ const reviewData = [
     name: "Jennifer L.",
     title: "Product Manager",
     comment:
-      "Incredible UX work! [Designer] took our complex data dashboard and made it intuitive and user-friendly. The wireframes were thorough, the design system is perfect, and the final product exceeded our expectations. Our users love the new interface. Top-notch professional!",
+      "Incredible UX work! Anuradha took our complex data dashboard and made it intuitive and user-friendly. The wireframes were thorough, the design system is perfect, and the final product exceeded our expectations. Our users love the new interface. Top-notch professional!",
     date: "date",
     rating: 5,
   },
@@ -51,7 +51,7 @@ const reviewData = [
     name: "Lisa K. ",
     title: " Tech Entrepreneur",
     comment:
-      "Fantastic experience! [Designer] created detailed wireframes and an interactive prototype for our mobile app. Their user research insights were valuable and helped us avoid potential usability issues. Fast delivery, great communication, and professional quality work. Thank you!",
+      "Fantastic experience! Jayathunga created detailed wireframes and an interactive prototype for our mobile app. Their user research insights were valuable and helped us avoid potential usability issues. Fast delivery, great communication, and professional quality work. Thank you!",
     date: "date",
     rating: 5,
   },
@@ -60,7 +60,7 @@ const reviewData = [
     name: "Amanda S.",
     title: " Marketing Manager",
     comment:
-      "Solid work! [Designer] created multiple landing page designs that captured our brand well. The conversion-focused approach was exactly what we needed. Delivered on time and within budget. Professional and reliable freelancer.",
+      "Solid work! Jayathunga created multiple landing page designs that captured our brand well. The conversion-focused approach was exactly what we needed. Delivered on time and within budget. Professional and reliable freelancer.",
     date: "date",
     rating: 4,
   },
@@ -70,7 +70,7 @@ const reviewData = [
     name: "Jennifer L.",
     title: "Product Manager",
     comment:
-      "Incredible UX work! [Designer] took our complex data dashboard and made it intuitive and user-friendly. The wireframes were thorough, the design system is perfect, and the final product exceeded our expectations. Our users love the new interface. Top-notch professional!",
+      "Incredible UX work! Jayathunga took our complex data dashboard and made it intuitive and user-friendly. The wireframes were thorough, the design system is perfect, and the final product exceeded our expectations. Our users love the new interface. Top-notch professional!",
     date: "date",
     rating: 5,
   },

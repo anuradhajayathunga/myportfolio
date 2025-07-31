@@ -43,7 +43,7 @@ const badgesData = [
 
 const Hero = () => {
   return (
-    <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 ">
+    <section className="py-12 xl:py-24 md:h-[84vh] xl:pt-28 ">
       {/* bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none" */}
       <div className="container  mx-auto">
         <div className="flex items-center justify-between gap-x-12">
@@ -125,9 +125,9 @@ const Hero = () => {
         {/* icons */}
         <a
           href="/#about" // ID of the section you want to scroll to
-          className=" md:flex absolute left-1/2 bottom-12 xl:bottom-12 transform -translate-x-1/2 animate-bounce ease-in-out cursor-pointer"
+          className=" md:flex absolute left-1/2 bottom-12 xl:bottom-12 transform -translate-x-1/2 animate-bounce duration-1000 delay-100 ease-in-out cursor-pointer"
         >
-          <RiArrowDownSLine className="hidden xl:block text-6xl text-light-base bg-light-primary backdrop-blur-lg rounded-full p-2" />
+          <RiArrowDownSLine className="hidden lg:block text-6xl text-light-base bg-light-primary backdrop-blur-lg rounded-full p-2" />
         </a>
       </div>
     </section>

@@ -5,7 +5,7 @@ import Socials from "./Socials";
 const Footer = () => {
   return (
     <footer className=" py-6 bg-transparent ">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="container px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           {/* <Image
@@ -30,7 +30,7 @@ const Footer = () => {
         />
       </div>
       {/* Copyright */}
-      <div className="text-light-mutborder-light-muted text-sm text-center ">
+      <div className="text-light-mutborder-light-muted text-sm text-center mt-4 md:mt-0 ">
         &copy; {new Date().getFullYear()}{" "}
         <span className="text-foreground font-medium">Anuradha Jayathunga</span>
         . All rights reserved.

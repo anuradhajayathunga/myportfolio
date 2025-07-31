@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import {
   User2,
-  MailIcon,
+  MailOpen,
   HomeIcon,
   PhoneCall,
   GraduationCapIcon,
@@ -31,7 +31,12 @@ const infoData = [
   //   text: "+94 759 089 188",
   // },
   {
-    icon: <MailIcon className="text-primary" size={20} />, // Steel Blue color
+    icon: (
+      <MailOpen
+        className="text-light-secondary dark:text-dark-secondary"
+        size={16}
+      />
+    ), // Steel Blue color
     text: "ishiwaraanuradha@gmail.com",
   },
 
@@ -184,14 +189,39 @@ const About = () => {
               <div className="text-lg mt-12 xl:mt-8">
                 <TabsContent value="personal">
                   <div className="text-left xl:text-left xl:max-w-[600px]">
-                    <h3 className="h3 mb-2 ">
+                    {/* <h3 className="h3 mb-2 ">
                       A story of hardcore and perseverance
-                    </h3>
-                    <p className="text-light-text dark:text-dark-muted text-lg mb-2 font-light ">
+                    </h3> */}
+                    {/* <p className="text-light-text dark:text-dark-muted text-lg mb-2 font-light ">
                       Hi I'm Anuradha Jayathunga, a passionate UI/UX designer
                       based in the Sri Lanka.Welcome to portfolio world.Brief
                       description with insights into myself, my vocational
                       journey, and what I engage in professionally.
+                    </p> */}
+                    <p className="text-lg text-light-text dark:text-dark-muted mb-2 font-light ">
+                      Hello!
+                      <span className="font-semibold text-md">
+                        {" "}
+                        I'm Anuradha
+                      </span>{" "}
+                      a passionate web developer with a keen eye for detail and
+                      a love for creating beautiful, functional websites. With a
+                      background in both design and development, I strive to{" "}
+                      <span className="font-semibold text-md">
+                        build user-friendly interfaces
+                      </span>{" "}
+                      that not only look great but also provide an exceptional
+                      user experience.
+                    </p>
+                    <p className="text-lg text-light-text dark:text-dark-muted  mb-2 font-light  mt-4">
+                      My journey in web development has equipped me with a
+                      diverse set of skills, including{" "}
+                      <span className="font-semibold text-md">
+                        HTML, CSS, JavaScript, and various frameworks
+                      </span>
+                      . I enjoy tackling challenges and continuously learning
+                      new technologies to stay ahead in this ever-evolving
+                      field.
                     </p>
                     <h3 className="h4 mb-2 ">Contact</h3>
                     <p className="text-light-text dark:text-dark-muted  text-lg mb-3 font-light ">
@@ -205,7 +235,7 @@ const About = () => {
                         <div key={index} className="flex items-center mb-2">
                           <div className="flex-shrink-0">{item.icon}</div>
                           <div className="ml-2">
-                            <div className="text-[16px] font-normal text-light-secondary dark:text-dark-secondary">
+                            <div className="text-[16px] tracking-wide font-normal text-light-secondary dark:text-dark-secondary">
                               {item.text}
                             </div>
                           </div>
@@ -218,13 +248,13 @@ const About = () => {
                         className="text-center xl:text-left"
                         href="/contact"
                       >
-                        <Button className="text-left xl:text-left  gap-2">
+                        <Button variant="" className="gap-2 w-full">
                           HIRE ME
                           <Send size={16} className="ml-1" />
                         </Button>
                       </Link>
                       <Button variant="outline" className="gap-2">
-                        <a href={`${prefix}/about/Anuradha's CV.pdf`} download>
+                        <a href={`${prefix}/about/Anuradha's cv.pdf`} download>
                           DOWNLOAD CV
                         </a>
                         <Download size={16} className="ml-1" />
