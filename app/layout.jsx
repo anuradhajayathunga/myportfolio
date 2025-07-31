@@ -19,7 +19,7 @@ export const metadata = {
   keywords: "nextjs, react, ui/ux",
   authors: "Anuradha Jayathunga",
   icons: {
-    icon: "/favicon.ico", 
+    icon: "./favicon.ico", 
   },
 };
 
