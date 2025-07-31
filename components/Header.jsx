@@ -39,7 +39,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden xl:flex gap-x-10 items-center">
           {[
-            { label: "Home", href: "/" },
+            { label: "Home", href: "/#top" },
             { label: "About", href: "/#about" },
             { label: "Services", href: "/#services" },
             { label: "My Work", href: "/#mywork" },
