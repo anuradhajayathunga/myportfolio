@@ -12,6 +12,7 @@ import {
 import DevImg from "./DevImg";
 import Badge from "./Badge";
 import Socials from "./Socials";
+import BlurBlob from "./ui/BlurBlob";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
 const badgesData = [
@@ -43,10 +44,10 @@ const badgesData = [
 
 const Hero = () => {
   return (
-    <section className="py-12 xl:py-24 md:h-[84vh] xl:pt-28 ">
+    <section className="relative py-12  xl:py-24 xl:pt-28">
       {/* bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none" */}
       <div className="container mx-auto">
-        <div className="flex items-center justify-between gap-x-12">
+        <div className="flex items-center justify-between gap-x-12 mb-8">
           {/* text */}
           <div className="flex max-w-[600px] flex-col justify-center xl:mx-auto text-left  ">
             <div className="text-sm  font-semibold mb-0 text-black tracking-[0px] dark:text-white">
@@ -98,11 +99,11 @@ const Hero = () => {
               {/* Responsive Dev Section */}
               <div className="relative flex items-center justify-center w-full px-4 sm:px-6 lg:px-0">
                 {/* Blurred Gradient Background */}
-                <div className="absolute -z-10 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-8 -right-8 sm:-top-10 sm:-right-10 animate-pulse" />
+                <div className="absolute -z-10 w-[240px] h-[240px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-8 -right-8 sm:-top-10 sm:-right-10 animate-pulse" />
 
                 {/* Dev Image */}
                 <DevImg
-                  containerStyles="w-[180px] h-[180px] sm:w-[260px] sm:h-[260px] md:w-[400px] md:h-[400px] lg:w-[510px] lg:h-[462px] xl:w-[600px] xl:h-[500px] drop-shadow-2xl"
+                  containerStyles="w-[270px] h-[270px] sm:w-[260px] sm:h-[260px] md:w-[400px] md:h-[400px] lg:w-[510px] lg:h-[462px] xl:w-[600px] xl:h-[500px] "
                   lightbg={`${prefix}/hero/shape-1.svg`}
                   bg={`${prefix}/hero/shape-1-dark.svg`}
                   imgSrc={`${prefix}/hero/developer.png`}
@@ -124,8 +125,13 @@ const Hero = () => {
           {/* image */}
           <div className="relative hidden lg:flex xl:mx-auto ">
             {/* Blurred Gradient Background */}
-            <div className="absolute -z-10 w-[320px] h-[320px] md:w-[420px] md:h-[420px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-10 -right-10 animate-pulse" />
-
+            {/* <div className="absolute -z-10 w-[320px] h-[320px] md:w-[420px] md:h-[420px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-10 -right-10 animate-pulse" /> */}
+            <BlurBlob
+              variant="primary"
+              position="top-left"
+              size={600}
+              animated={false}
+            />
             {/* Dev Image */}
             <DevImg
               containerStyles="w-[260px] h-[260px] md:w-[510px] md:h-[462px] xl:w-[600px] xl:h-[500px] drop-shadow-2xl"
@@ -149,9 +155,9 @@ const Hero = () => {
         {/* icons */}
         <a
           href="/#about" // ID of the section you want to scroll to
-          className="absolute duration-1000 ease-in-out delay-100 transform -translate-x-1/2 cursor-pointer md:flex left-1/2 bottom-12 xl:bottom-12 animate-bounce"
+          className="absolute  duration-1000 ease-in-out  cursor-pointer md:flex left-1/2 mt-20 animate-bounce"
         >
-          <RiArrowDownSLine className="hidden p-2 text-6xl rounded-full lg:block text-light-base bg-light-primary backdrop-blur-lg" />
+          <RiArrowDownSLine className="hidden p-2 text-6xl rounded-full lg:block text-dark-base dark:text-light-base bg-light-primary dark:bg-dark-base/50 backdrop-blur-lg" />
         </a>
       </div>
     </section>

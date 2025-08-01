@@ -8,9 +8,8 @@ import {
   User,
   MailIcon,
   ArrowRightIcon,
-  MessageSquare,
   Mail,
-  MessageSquareCode,
+  MessageSquare ,
   Send,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -62,7 +61,7 @@ const Form = () => {
   }, [result]);
 
   return (
-    <div className="bg-light-base dark:bg-dark-base rounded-md">
+    <div className="bg-transparent rounded-md">
       {/* <div className="mb-8">
         <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3">
           Send Me a Message
@@ -122,7 +121,7 @@ const Form = () => {
               required
               className="pr-3"
             />
-            <MessageSquareCode className="absolute right-4 top-4 w-5 h-5 text-zinc-400 dark:text-zinc-500" />
+            <MessageSquare  className="absolute right-4 top-4 w-5 h-5 text-zinc-400 dark:text-zinc-500" />
           </div>
         </div>
 

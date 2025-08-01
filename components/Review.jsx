@@ -95,14 +95,18 @@ const Review = () => {
         <div className="flex flex-col xl:flex-row justify-between">
           {/* image */}
           <div className="hidden xl:flex flex-1 relative">
-            <BlurBlob position="top-left"size={300} />
-             <DevImg
+            <BlurBlob
+              variant="primary"
+              position="top-left"
+              size={600}
+              animated={true}
+            />
+            <DevImg
               containerStyles=" w-[505px] h-[505px] bg-no-repeat relative"
               lightbg={`${prefix}/about/shape-light.svg`}
               bg={`${prefix}/about/shape-dark.svg`}
               imgSrc={`${prefix}/reviews/developer.png`}
             />
-
             {/* Floating avatars around image */}
             {reviewData.slice(0, positions.length).map((person, index) => {
               const isActive = index === activeIndex;
@@ -111,7 +115,7 @@ const Review = () => {
                   key={index}
                   className={`absolute ${
                     positions[index]
-                  } w-12 h-12 rounded-full overflow-hidden border-2 shadow-lg
+                  } w-14 h-14 rounded-full overflow-hidden border-2 shadow-lg
         ${isActive ? "ring-2 ring-light-primary dark:bg-dark-primary" : ""}
         border-white dark:border-dark-muted`}
                   initial={{ y: 0 }}

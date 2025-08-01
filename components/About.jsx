@@ -124,8 +124,8 @@ const SkillData = [
     data: [
       { imgPath: `${prefix}/about/vscode.svg` },
       { imgPath: `${prefix}/about/notion.svg` },
-      { imgPath: `${prefix}/about/figma.svg` },
-      { imgPath: `${prefix}/about/photoshop.svg` },
+      { imgPath: `${prefix}/about/Figma.svg` },
+      { imgPath: `${prefix}/about/Photoshop.svg` },
     ],
   },
 ];
@@ -136,10 +136,7 @@ const About = () => {
   };
   const { theme } = useTheme();
   return (
-    <section
-      id="about"
-      className="xl:h-[860px] py-12 md:py-96  lg:py-24 scroll-mt-20"
-    >
+    <section id="about" className="xl:h-[860px] py-12   lg:py-24 scroll-mt-20">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-between">
           <div className="text-center xl:text-left">
@@ -155,7 +152,12 @@ const About = () => {
           {/* image */}
           <div className="relative flex-1 hidden xl:flex">
             {/* Blurred SVG shape */}
-            <BlurBlob position="center" />
+            <BlurBlob
+              variant="primary"
+              position="top-right"
+              size={600}
+              animated={false}
+            />
 
             {/* Developer image */}
             <DevImg
@@ -360,7 +362,7 @@ const About = () => {
 
                 <TabsContent value="skills">
                   <div className="text-center xl:text-left">
-                    <h3 className="mb-8 h3 ">Tools I use everyday.</h3>
+                    <h3 className="mb-8 h3 ">Tools I use everyday</h3>
                     <div>
                       <h4 className="mb-2 font-bold h4">Skills</h4>
                       <div className="mb-4 border-b border-border"></div>
