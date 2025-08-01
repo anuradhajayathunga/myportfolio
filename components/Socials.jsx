@@ -11,12 +11,12 @@ import Link from 'next/link';
 
 const icons = [
   {
-    path: '',
+    path: 'linkedin.com/in/anuradha-jayathunga-10a832307',
     name:<RiLinkedinFill className="text-primary dark:text-white text-3xl" />,
     // Blue-400
   },
   {
-    path: '',
+    path: 'https://github.com/anuradhajayathunga',
     name: <RiGithubFill className="text-primary dark:text-black text-3xl bg-white rounded-full bg-cover p-0" />,
   },
   // {
@@ -41,7 +41,7 @@ const Socials = ({containerStyles,iconsStyles}) => {
   return (
     <div className={`${containerStyles}`}>
       {icons.map((icon,index) => (
-        <Link href={icon.path} key={icon.name}>
+        <Link href={icon.path} key={index} >
           <div className={`${iconsStyles}`}>{icon.name}</div>
         </Link>
       ))}

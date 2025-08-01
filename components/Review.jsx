@@ -95,7 +95,7 @@ const Review = () => {
         <div className="flex flex-col xl:flex-row justify-between">
           {/* image */}
           <div className="hidden xl:flex flex-1 relative">
-            <BlurBlob position="center" />
+            <BlurBlob position="top-left"size={300} />
              <DevImg
               containerStyles=" w-[505px] h-[505px] bg-no-repeat relative"
               lightbg={`${prefix}/about/shape-light.svg`}

@@ -12,10 +12,10 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent>
         <div className="flex flex-col items-left justify-between h-full pb-8">
-          <div className="hidden xl:flex xl:flex-col xl:items-start xl:justify-start xl:pl-4 xl:pt-4">
+          <div className="hidden lg:flex xl:flex-col xl:items-start xl:justify-start xl:pl-4 xl:pt-4">
             <ThemeTogggler />
           </div>
-          <div className="xl:hidden -mt-[15px] -ml-[10px]">
+          <div className="lg:hidden -mt-[15px] -ml-[10px]">
             <ThemeTogggler />
           </div>
           <div className="flex flex-col items-center gap-y-32">

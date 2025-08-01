@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { path: "/", name: "home", id: "home" },
+  { path: "/#top", name: "home", id: "home" },
   { path: "/#about", name: "about", id: "#about" },
-  { path: "/#portfolio", name: "portfolio", id: "#portfolio" },
-  { path: "/work", name: "work", id: "work" },
+  { path: "/#services", name: "services", id: "#services" },
+  { path: "/#mywork", name: "portfolio", id: "#mywork" },
   { path: "/contact", name: "contact", id: "contact" },
 ];
 
