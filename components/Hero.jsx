@@ -59,7 +59,7 @@ const Hero = () => {
                 developer
               </span>
             </h1>
-            <p className="md:subtitle max-w-[560px] mx-auto xl:mx-0">
+            <p className="subtitle max-w-xl mx-auto xl:mx-0">
               I'm Anuradha Jayathunga, a frontend web developer from Colombo,
               Sri Lanka, with 4 years of experience as a freelancer.
             </p>
@@ -157,7 +157,7 @@ const Hero = () => {
           href="/#about" // ID of the section you want to scroll to
           className="absolute  duration-1000 ease-in-out  cursor-pointer md:flex left-1/2 mt-20 animate-bounce"
         >
-          <RiArrowDownSLine className="hidden p-2 text-6xl rounded-full lg:block text-dark-base dark:text-light-base bg-light-primary dark:bg-dark-base/50 backdrop-blur-lg" />
+          <RiArrowDownSLine className="hidden p-2 text-6xl rounded-full lg:block text-zinc-50 dark:text-zinc-950 bg-zinc-950 dark:bg-zinc-100 backdrop-blur-lg" />
         </a>
       </div>
     </section>

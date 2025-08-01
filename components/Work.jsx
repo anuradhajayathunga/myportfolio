@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 import ProjectCard from "@/components/ProjectCard";
 
@@ -136,7 +136,9 @@ const Work = () => {
             }}
             spaceBetween={20}
             pagination={{ clickable: true }}
-            modules={[Pagination]}
+            loop={true}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            modules={[Pagination, Autoplay]}
           >
             {projectData.slice(0, 4).map((project, index) => (
               <SwiperSlide key={index}>

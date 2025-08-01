@@ -17,7 +17,7 @@ const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 // Main Contact Component
 const Contact = () => {
   return (
-    <section className="min-h-screen bg-white dark:bg-zinc-900 py-0 transition-colors duration-300">
+    <section className="min-h-screen bg-white dark:bg-zinc-900 py-24 transition-colors duration-300">
       <div className="container xl:mx-auto px-4 max-w-7xl">
         {/* Header Section */}
         <div className="grid xl:grid-cols-2 gap-12 xl:gap-20 mb-2 ">
@@ -50,20 +50,20 @@ const Contact = () => {
 
           {/* Visual Element */}
           <div className="relative ">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-500/20 dark:from-blue-400/10 dark:to-blue-400/10 rounded-3xl blur-3xl"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-500/20 dark:from-blue-400/10 dark:to-blue-400/10 rounded-3xl blur-3xl"></div> */}
             {/* content */}
             <div className="text-center space-y-4 flex items-start justify-center">
-              <div className=" w-[320px] h-[320px] opacity-10 blur-sm">
+              {/* <div className=" w-[320px] h-[320px] opacity-10 blur-sm">
                 <img src={`${prefix}/contact/message.png`} alt="message"/>
-              </div>
+              </div> */}
               {/* <p className="text-zinc-600 dark:text-zinc-300 font-medium">
                   Ready to start a conversation?
                 </p>  */}
             </div>
 
             {/* Floating elements */}
-            <div className="absolute top-14 left-8 w-20 h-20 bg-blue-400/20 dark:bg-blue-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-40 left-20 w-16 h-16 bg-cyan-400/20 dark:bg-cyan-400/10 rounded-full blur-3xl"></div>
+            {/* <div className="absolute top-14 left-8 w-20 h-20 bg-blue-400/20 dark:bg-blue-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-40 left-20 w-16 h-16 bg-cyan-400/20 dark:bg-cyan-400/10 rounded-full blur-3xl"></div> */}
             
           </div>
         </div>
@@ -82,12 +82,12 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-6">
                   Get In Touch
                 </h2>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-8">
+                <p className="text-zinc-600 dark:text-zinc-400 mb-8 max-w-sm">
                   I'm always interested in hearing about new opportunities and
                   exciting projects.
                 </p>
               </div>
-              <div className="absolute hidden opacity-0 dark:opacity-100  md:flex md:right-[5px] lg:right-[10px] xl:right-[280px]  z-10 ">
+              <div className="absolute hidden  md:flex md:right-[5px] lg:right-[10px] xl:right-[280px]  z-10 ">
                 {/* Developer image */}
                 <DevImg
                   containerStyles=" w-[500px] h-[500px] bg-no-repeat absolute"
@@ -99,9 +99,9 @@ const Contact = () => {
             </div>
 
             {/* Contact Cards */}
-            <div className="space-y-6 ">
+            <div className="space-y-6 z-20 ">
               {/* Email */}
-              <div className="group flex items-center gap-6 p-6 bg-transparent  dark:bg-zinc-800 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700">
+              <div className="group flex items-center mx-auto gap-6 p-6 bg-transparent  dark:bg-zinc-800 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700">
                 <div className="p-4 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl group-hover:scale-110 transition-transform duration-300">
                   <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                   <p className="text-xs lg:text-sm font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
                     Email
                   </p>
-                  <p className="text-sm lg:text-lg font-semibold text-zinc-900 dark:text-white">
+                  <p className="text-xs lg:text-lg font-semibold text-zinc-900 dark:text-white">
                     ishiwaraanuradha@gmail.com
                   </p>
                 </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                   <p className="text-xs lg:text-smfont-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
                     Phone
                   </p>
-                  <p className="text-sm lg:text-lg font-semibold text-zinc-900 dark:text-white">
+                  <p className="text-xs lg:text-lg font-semibold text-zinc-900 dark:text-white">
                     +94 743-119-199
                   </p>
                 </div>

@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 const icons = [
   {
-    path: 'linkedin.com/in/anuradha-jayathunga-10a832307',
+    path: 'https://linkedin.com/in/anuradha-jayathunga-10a832307',
     name:<RiLinkedinFill className="text-primary dark:text-white text-3xl" />,
     // Blue-400
   },

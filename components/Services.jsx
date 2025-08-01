@@ -61,7 +61,7 @@ const Services = () => {
           {servicesData.map((item, index) => (
             <Card
               key={index}
-              className="w-full max-w-[500px] h-auto flex flex-col pt-16 pb-0 justify-center items-center relative hover:bg-primary hover:text-white group transition-all duration-300"
+              className="w-full max-w-[500px] h-auto flex flex-col pt-16 pb-0 justify-center items-center relative hover:bg-primary hover:text-white group group-hover:transform group-hover:-translate-y-2  transition-all duration-500"
             >
               <CardHeader className="absolute -top-[3px]">
                 <div className="w-[140px] h-[80px] flex justify-center items-center">
