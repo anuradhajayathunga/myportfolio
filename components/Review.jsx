@@ -90,11 +90,11 @@ const Review = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { theme } = useTheme();
   return (
-    <section className="relative mb-0 xl:py-12">
+    <section className="relative  xl:py-24 ">
       <div className="container max-auto">
-        <div className="flex flex-col xl:flex-row justify-between">
+        <div className="flex flex-col lg:flex-row justify-between">
           {/* image */}
-          <div className="hidden xl:flex flex-1 relative">
+          <div className="hidden lg:flex flex-1 relative">
             <BlurBlob
               variant="primary"
               position="top-left"
@@ -154,7 +154,7 @@ const Review = () => {
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
-              className="max-w-3xl"
+              className="xl:max-w-3xl md:max-w-md"
               onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
             >
               {reviewData.map((person, index) => {
@@ -166,8 +166,8 @@ const Review = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <Card className="bg-tertiary/40 dark:secondary/40 p-10 min-h-[100px]">
-                        <CardDescription className="text-muted-foreground text-xl mb-2 font-light">
+                      <Card className="bg-tertiary/40 dark:secondary/40 p-6 xl:p-10 mx-auto min-h-[100px]  ">
+                        <CardDescription className="text-muted-foreground  text-xl mb-2 font-light">
                           <span className="font-bold text-4xl font-mono">
                             "
                           </span>

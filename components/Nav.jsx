@@ -1,42 +1,86 @@
-//link next js
+"use client";
+
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-
-//framer motion
-import { motion } from "framer-motion";
-
-//next hooks
-import { usePathname } from "next/navigation";
+import { Link as ScrollLink, scroller } from "react-scroll";
+import { useEffect, useState } from "react";
 
 const links = [
-  { path: "/#top", name: "home", id: "home" },
-  { path: "/#about", name: "about", id: "#about" },
-  { path: "/#services", name: "services", id: "#services" },
-  { path: "/#mywork", name: "portfolio", id: "#mywork" },
-  { path: "/contact", name: "contact", id: "contact" },
+  { name: "home", id: "home" },
+  { name: "about", id: "about" },
+  { name: "services", id: "services" },
+  { name: "my work", id: "mywork" },
+  { name: "contact", path: "/contact" },
 ];
 
-const Nav = ({ containerStyles, linkStyles, underlineStyles }) => {
-  const path = usePathname();
+const Nav = ({ containerStyles, linkStyles }) => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const [pendingScrollTarget, setPendingScrollTarget] = useState(null);
+
+  const handleScrollLink = (id) => {
+    if (pathname !== "/") {
+      setPendingScrollTarget(id);
+      router.push("/");
+    } else {
+      scroller.scrollTo(id, {
+        smooth: true,
+        duration: 500,
+        offset: -80,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (pathname === "/" && pendingScrollTarget) {
+      setTimeout(() => {
+        scroller.scrollTo(pendingScrollTarget, {
+          smooth: true,
+          duration: 500,
+          offset: -80,
+        });
+        setPendingScrollTarget(null);
+      }, 100);
+    }
+  }, [pathname, pendingScrollTarget]);
+
   return (
     <nav className={`${containerStyles}`}>
       {links.map((link, index) => {
-        return (
-          <Link
+        if (link.path) {
+          return (
+            <Link
+              key={index}
+              href={link.path}
+              className={`capitalize ${linkStyles}`}
+            >
+              {link.name}
+            </Link>
+          );
+        }
+
+        return pathname === "/" ? (
+          <ScrollLink
             key={index}
-            href={link.path}
-            className={`capitalize ${linkStyles}`}
+            to={link.id}
+            smooth={true}
+            duration={500}
+            offset={-80}
+            spy={true}
+            className={`capitalize cursor-pointer ${linkStyles}`}
+            activeClass="active"
           >
-            {link.path === path && (
-              <motion.span
-                className={`${underlineStyles}`}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ type: "tween" }}
-                layoutId="underline"
-              />
-            )}
             {link.name}
-          </Link>
+          </ScrollLink>
+        ) : (
+          <button
+            key={index}
+            onClick={() => handleScrollLink(link.id)}
+            className={`capitalize cursor-pointer ${linkStyles}`}
+          >
+            {link.name}
+          </button>
         );
       })}
     </nav>

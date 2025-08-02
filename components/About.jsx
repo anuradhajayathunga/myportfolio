@@ -124,8 +124,8 @@ const SkillData = [
     data: [
       { imgPath: `${prefix}/about/vscode.svg` },
       { imgPath: `${prefix}/about/notion.svg` },
-      { imgPath: `${prefix}/about/Figma.svg` },
-      { imgPath: `${prefix}/about/Photoshop.svg` },
+      { imgPath: `${prefix}/about/figma.svg` },
+      { imgPath: `${prefix}/about/photoshop.svg` },
     ],
   },
 ];
@@ -136,7 +136,7 @@ const About = () => {
   };
   const { theme } = useTheme();
   return (
-    <section id="about" className="xl:h-[860px] py-12   lg:py-24 scroll-mt-20">
+    <section id="about" className=" py-6 lg:py-12   xl:py-16 scroll-mt-20 ">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-between">
           <div className="text-center xl:text-left">

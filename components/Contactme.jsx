@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 const Contactme = () => {
   return (
-    <section className=" lg:px-8 xl:px-[0%] -mb-6 mt-12">
+    <section className=" xl:px-[0%] -mb-6 ">
       <div className="relative ">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/10 dark:to-purple-400/10 rounded-3xl blur-3xl"></div>
         <div className="relative  xl:h-full bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-700 p-8 flex items-center justify-center overflow-hidden">
@@ -11,11 +11,11 @@ const Contactme = () => {
             {/* <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-500 dark:to-blue-600 rounded-full flex items-center justify-center shadow-2xl">
               <MessageSquare className="w-12 h-12 text-white" />
             </div> */}
-            <p className="text-3xl md:text-3xl font-bold text-zinc-600 dark:text-zinc-200">
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold text-zinc-600 dark:text-zinc-200">
               Prepared to turn your ideas into reality?
-              {/* <br /> I'm here to help you. */}
+              <br /> <span className="lg:mt-2">I'm here to help you.</span>
               {/* Let's discuss your ideas and create something amazing together. */}
-              <br /> Get in touch to begin your journey.
+              {/* <br /> Get in touch to begin your journey. */}
             </p>
             <div className=" flex max-w-md p-2 mx-auto mt-8 rounded-full border border-gradient-to-br from-blue-500 to-purple-500 dark:from-blue-500 dark:to-purple-500">
               <input

@@ -43,7 +43,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-12 xl:py-16 scroll-mt-20">
+    <section id="services" className="py-12 xl:py-16 scroll-mt-20 ">
       <div className="container mx-auto">
         <div className="flex flex-col items-center xl:items-center">
           <div className="text-center xl:text-left">

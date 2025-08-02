@@ -44,16 +44,16 @@ const badgesData = [
 
 const Hero = () => {
   return (
-    <section className="relative py-12  xl:py-24 xl:pt-28">
+    <section id="home" className="relative xl:min-h-screen py-6  lg:py-12   xl:py-24  ">
       {/* bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none" */}
       <div className="container mx-auto">
         <div className="flex items-center justify-between gap-x-12 mb-8">
           {/* text */}
-          <div className="flex max-w-[600px] flex-col justify-center xl:mx-auto text-left  ">
-            <div className="text-sm  font-semibold mb-0 text-black tracking-[0px] dark:text-white">
+          <div className="flex max-w-[600px] flex-col  justify-center xl:mx-auto  lg:text-left  ">
+            <div className="text-sm  font-semibold mb-0 text-black tracking-[0px] dark:text-white ">
               Hello, I'm a
             </div>
-            <h1 className="mb-4 text-5xl font-black capitalize sm:text-8xl lg:text-7xl">
+            <h1 className="mb-4 text-6xl font-black capitalize sm:text-8xl lg:text-7xl">
               frontend web{" "}
               <span className="font-black underline text-light-primary dark:text-dark-primary">
                 developer
@@ -97,29 +97,7 @@ const Hero = () => {
                 imgSrc={`${prefix}/hero/developer.png`}
               /> */}
               {/* Responsive Dev Section */}
-              <div className="relative flex items-center justify-center w-full px-4 sm:px-6 lg:px-0">
-                {/* Blurred Gradient Background */}
-                <div className="absolute -z-10 w-[240px] h-[240px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] blur-[100px] opacity-60 bg-gradient-to-br from-primary via-accent2 to-accent3 dark:from-secondary dark:via-accent2 dark:to-accent3 rounded-full -top-8 -right-8 sm:-top-10 sm:-right-10 animate-pulse" />
-
-                {/* Dev Image */}
-                <DevImg
-                  containerStyles="w-[270px] h-[270px] sm:w-[260px] sm:h-[260px] md:w-[400px] md:h-[400px] lg:w-[510px] lg:h-[462px] xl:w-[600px] xl:h-[500px] "
-                  lightbg={`${prefix}/hero/shape-1.svg`}
-                  bg={`${prefix}/hero/shape-1-dark.svg`}
-                  imgSrc={`${prefix}/hero/developer.png`}
-                />
-
-                {/* Floating Badges */}
-                {badgesData.map((badge) => (
-                  <Badge
-                    key={badge.id}
-                    containerStyles={`${badge.containerStyles} max-sm:scale-[0.6] max-sm:-translate-x-1`}
-                    icon={badge.icon}
-                    endCountNum={badge.endCountNum}
-                    badgeText={badge.badgeText}
-                  />
-                ))}
-              </div>
+              
             </div>
           </div>
           {/* image */}
@@ -154,10 +132,10 @@ const Hero = () => {
         </div>
         {/* icons */}
         <a
-          href="/#about" // ID of the section you want to scroll to
-          className="absolute  duration-1000 ease-in-out  cursor-pointer md:flex left-1/2 mt-20 animate-bounce"
+          href="/#about" 
+          className="absolute  duration-1000 ease-in-out  cursor-pointer md:flex left-1/2 bottom-24 animate-bounce"
         >
-          <RiArrowDownSLine className="hidden p-2 text-6xl rounded-full lg:block text-zinc-50 dark:text-zinc-950 bg-zinc-950 dark:bg-zinc-100 backdrop-blur-lg" />
+          <RiArrowDownSLine className="hidden p-2 text-6xl rounded-full xl:block text-zinc-50 dark:text-zinc-950 bg-zinc-950 dark:bg-zinc-100 backdrop-blur-lg" />
         </a>
       </div>
     </section>

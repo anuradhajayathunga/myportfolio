@@ -98,7 +98,7 @@ const projectData = [
 
 const Work = () => {
   return (
-    <section id="mywork" className="pb-12 xl:py-12 scroll-mt-20">
+    <section id="mywork" className=" py-6 md:py-12 xl:py-12 scroll-mt-20 ">
       <div className="flex flex-col xl:flex-row items-center xl:items-start justify-center gap-8">
         {/* text */}
         <div className="w-full max-w-[400px] text-center xl:text-left mb-8 xl:mb-0">

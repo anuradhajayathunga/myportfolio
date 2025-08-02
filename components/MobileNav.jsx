@@ -1,33 +1,40 @@
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { AlignJustify } from "lucide-react";
 import ThemeTogggler from "./ThemeTogggler";
 import Nav from "./Nav";
 import Logo from "./Logo";
 import Socials from "./Socials";
+
 const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <AlignJustify className="cursor-pointer" />
+        <AlignJustify className="cursor-pointer text-[28px]" />
       </SheetTrigger>
-      <SheetContent>
-        <div className="flex flex-col items-left justify-between h-full pb-8">
-          <div className="hidden lg:flex xl:flex-col xl:items-start xl:justify-start xl:pl-4 xl:pt-4">
+
+      <SheetContent className="flex flex-col justify-between px-6 pt-2 pb-10">
+        {/* Top Section */}
+        <div className="flex items-center justify-between mr-6">
+          <Logo />
+          <div className="opacity-60 hover:opacity-100 transition-opacity">
             <ThemeTogggler />
           </div>
-          <div className="lg:hidden -mt-[15px] -ml-[10px]">
-            <ThemeTogggler />
-          </div>
-          <div className="flex flex-col items-center gap-y-32">
-            <Logo />
-            <Nav
-              containerStyles="flex flex-col items-left gap-y-6 mt-5"
-              linkStyles="text-2xl"
-            />
-          </div>
+        </div>
+
+        {/* Middle Section */}
+        <div className="mt-12">
+          <Nav
+            containerStyles="flex flex-col gap-6 items-start "
+            linkStyles="text-xl font-medium hover:text-primary transition-colors"
+            closeComponent={SheetClose} // pass close component
+          />
+        </div>
+
+        {/* Bottom Section */}
+        <div className="mt-auto">
           <Socials
-            containerStyles="flex justify-center items-center gap-x-4 mb-2"
-            linkStyles="text-3xl"
+            containerStyles="flex justify-center gap-5"
+            linkStyles="text-2xl hover:text-primary transition-colors"
           />
         </div>
       </SheetContent>
