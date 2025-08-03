@@ -125,7 +125,7 @@ const SkillData = [
       { imgPath: `${prefix}/about/vscode.svg` },
       { imgPath: `${prefix}/about/notion.svg` },
       { imgPath: `${prefix}/about/figma.svg` },
-      { imgPath: `${prefix}/about/photoshop.svg` },
+      { imgPath: `${prefix}/about/adobephotoshop.svg` },
     ],
   },
 ];
