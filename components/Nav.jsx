@@ -26,24 +26,29 @@ const Nav = ({ containerStyles, linkStyles }) => {
     } else {
       scroller.scrollTo(id, {
         smooth: true,
-        duration: 300,
+        duration: 500,
         offset: -80,
       });
     }
   };
 
-  useEffect(() => {
-    if (pathname === "/" && pendingScrollTarget) {
-      setTimeout(() => {
-        scroller.scrollTo(pendingScrollTarget, {
-          smooth: true,
-          duration: 300,
-          offset: -80,
-        });
-        setPendingScrollTarget(null);
-      }, 100);
-    }
-  }, [pathname, pendingScrollTarget]);
+useEffect(() => {
+  if (pathname === "/" && pendingScrollTarget) {
+    const scrollTarget = pendingScrollTarget;
+
+    // Use requestAnimationFrame for smoother DOM readiness
+    const frame = requestAnimationFrame(() => {
+      scroller.scrollTo(scrollTarget, {
+        smooth: true,
+        duration: 500,
+        offset: -80,
+      });
+      setPendingScrollTarget(null);
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }
+}, [pathname, pendingScrollTarget]);
 
   return (
     <nav className={`${containerStyles}`}>
@@ -65,7 +70,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
             key={index}
             to={link.id}
             smooth={true}
-            duration={300}
+            duration={500}
             offset={-80}
             spy={true}
             className={`capitalize cursor-pointer ${linkStyles}`}

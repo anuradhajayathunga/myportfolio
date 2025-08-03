@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 const Contactme = () => {
   return (
-    <section className=" xl:px-[0%] -mb-6 ">
+    <section className=" xl:px-[0%]">
       <div className="relative ">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/10 dark:to-purple-400/10 rounded-3xl blur-3xl"></div>
         <div className="relative  xl:h-full bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-700 p-8 flex items-center justify-center overflow-hidden">

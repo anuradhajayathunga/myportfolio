@@ -137,7 +137,7 @@ const Work = () => {
             spaceBetween={20}
             pagination={{ clickable: true }}
             loop={true}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
             modules={[Pagination, Autoplay]}
           >
             {projectData.slice(0, 4).map((project, index) => (

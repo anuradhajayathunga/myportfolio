@@ -37,7 +37,7 @@ const Header = () => {
         <Logo />
 
         {/* Desktop Nav */}
-        {/* <nav className="hidden xl:flex gap-x-10 items-center">
+        <nav className="hidden xl:flex gap-x-10 items-center">
           {[
             { label: "Home", href: "/#home" },
             { label: "About", href: "/#about" },
@@ -53,12 +53,12 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-        </nav> */}
-
+        </nav>
+{/* 
          <Nav
             containerStyles="hidden xl:flex gap-x-10 items-center"
             linkStyles="relative font-medium transition-colors hover:text-primary after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300"
-          />
+          /> */}
 
         {/* Right Section */}
         <div className="flex items-center gap-x-4">
