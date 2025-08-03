@@ -12,9 +12,9 @@ const MobileNav = () => {
         <AlignJustify className="cursor-pointer text-[28px]" />
       </SheetTrigger>
 
-      <SheetContent className="flex flex-col justify-between px-6 pt-2 pb-10">
+      <SheetContent className="flex flex-col justify-between px-6 pt-2 md:pt-1 pb-10">
         {/* Top Section */}
-        <div className="flex items-center justify-between mr-6">
+        <div className="flex items-center justify-between mr-6 md:pr-6 ">
           <Logo />
           <div className="opacity-60 hover:opacity-100 transition-opacity">
             <ThemeTogggler />
@@ -25,7 +25,7 @@ const MobileNav = () => {
         <div className="mt-12">
           <Nav
             containerStyles="flex flex-col gap-6 items-start "
-            linkStyles="text-xl font-medium hover:text-primary transition-colors"
+            linkStyles="relative text-xl font-medium hover:text-primary after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300 transition-colors"
             closeComponent={SheetClose} // pass close component
           />
         </div>

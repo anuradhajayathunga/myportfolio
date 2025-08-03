@@ -114,6 +114,10 @@ const SkillData = [
         // Percentage: '90%',
       },
       {
+        name: "TailwindCss",
+        // Percentage: '90%',
+      },
+      {
         name: "Figma",
         // Percentage: '90%',
       },

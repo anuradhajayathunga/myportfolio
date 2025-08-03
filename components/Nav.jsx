@@ -26,7 +26,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
     } else {
       scroller.scrollTo(id, {
         smooth: true,
-        duration: 500,
+        duration: 300,
         offset: -80,
       });
     }
@@ -37,7 +37,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
       setTimeout(() => {
         scroller.scrollTo(pendingScrollTarget, {
           smooth: true,
-          duration: 500,
+          duration: 300,
           offset: -80,
         });
         setPendingScrollTarget(null);
@@ -65,7 +65,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
             key={index}
             to={link.id}
             smooth={true}
-            duration={500}
+            duration={300}
             offset={-80}
             spy={true}
             className={`capitalize cursor-pointer ${linkStyles}`}
