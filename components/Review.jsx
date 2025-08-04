@@ -90,7 +90,7 @@ const Review = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { theme } = useTheme();
   return (
-    <section className="relative  xl:py-24 ">
+    <section className="relative  xl:py-24 scroll-mt-20 ">
       <div className="container max-auto">
         <div className="flex flex-col lg:flex-row justify-between">
           {/* image */}

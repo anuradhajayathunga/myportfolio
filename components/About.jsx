@@ -140,7 +140,7 @@ const About = () => {
   };
   const { theme } = useTheme();
   return (
-    <section id="about" className=" py-6 lg:py-12   xl:py-16  ">
+    <section id="about" className=" py-6 lg:py-12   xl:py-16 scroll-mt-20  ">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-between">
           <div className="text-center xl:text-left">

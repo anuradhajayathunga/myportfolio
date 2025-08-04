@@ -44,7 +44,7 @@ const badgesData = [
 
 const Hero = () => {
   return (
-    <section id="home" className="relative xl:min-h-screen py-6  lg:py-12   xl:py-24  ">
+    <section id="home" className="relative xl:min-h-screen py-6  lg:py-12   xl:py-24  scroll-mt-20 ">
       {/* bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none" */}
       <div className="container mx-auto">
         <div className="flex items-center justify-between gap-x-12 mb-8">
