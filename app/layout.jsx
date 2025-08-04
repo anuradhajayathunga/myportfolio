@@ -2,15 +2,14 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 // components
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
 
 // Load Poppins font
 const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"], // optional: choose what you need
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -19,18 +18,16 @@ export const metadata = {
   keywords: "nextjs, react, ui/ux",
   authors: "Anuradha Jayathunga",
   icons: {
-    icon: "./favicon.ico", 
+    icon: "./favicon.ico",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning className="transition-colors duration-300 scroll-smooth">
-      <body className={poppins.className}>
+    <html lang="en" className={`${poppins.variable} scroll-smooth dark`}>
+      <body className="font-poppins antialiased leading-8 overflow-x-hidden min-h-screen transition-colors duration-500 bg-light-base text-light-text dark:bg-dark-base dark:text-dark-text">
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <Header />
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
