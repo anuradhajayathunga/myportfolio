@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Frame  , Image , TabletSmartphone ,LayoutPanelTop  } from "lucide-react";
+import { Frame, Image, TabletSmartphone, LayoutPanelTop } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -8,32 +8,32 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/motionVariants";
 const servicesData = [
- 
   {
-    icon: <LayoutPanelTop   size={72} strokeWidth={0.8} />,
+    icon: <LayoutPanelTop size={72} strokeWidth={0.8} />,
     title: "Web Design",
     subtitle: "112 PROJECTS",
     description:
       "We create responsive, eye-catching websites that work on every device. From layout and navigation to interactivity and visuals, our web design services give your business an unforgettable online presence.",
   },
   {
-    icon: <TabletSmartphone  size={72} strokeWidth={0.8} />,
+    icon: <TabletSmartphone size={72} strokeWidth={0.8} />,
     title: "Mobile app",
     subtitle: "50 PROJECTS",
     description:
       "Mobile app development involves creating software  From layout and navigation to interactivity and visuals, our web design services give your business an unforgettable online presence.",
   },
-   {
-    icon: <Frame   size={72} />,
+  {
+    icon: <Frame size={72} />,
     title: "UI & UX Design",
     subtitle: "198 PROJECTS",
     description:
       "Design intuitive, engaging user interfaces and experiences that capture the attention of the user and increase the usability of a digital product. Let our UI & UX be driven by user-centered design so that your products are not just good-looking but also work well and are easy to use.",
   },
   {
-    icon: <Image  size={72} strokeWidth={0.8} />,
+    icon: <Image size={72} strokeWidth={0.8} />,
     title: "Graphic Design",
     subtitle: "35 PROJECTS",
     description:
@@ -43,16 +43,29 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-12 xl:py-16 scroll-mt-20 ">
+    <motion.section
+      id="services"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of section is visible
+      className="py-12 xl:py-16 scroll-mt-20 "
+    >
       <div className="container mx-auto">
         <div className="flex flex-col items-center xl:items-center">
           <div className="text-center xl:text-left">
-            <div className="text-[10px] uppercase font-semibold text-black dark:text-white tracking-[1px]">
+            <motion.div
+              variants={fadeInUp(0.4)}
+              className="text-[10px] uppercase font-semibold text-black dark:text-white tracking-[1px]"
+            >
               WHAT I WILL DO FOR YOU
-            </div>
-            <h2 className="text-5xl font-bold text-primary mb-8 xl:mb-16">
+            </motion.div>
+            <motion.h2
+              variants={fadeInUp(0)}
+              className="text-5xl font-bold text-primary mb-8 xl:mb-16"
+            >
               Services
-            </h2>
+            </motion.h2>
           </div>
         </div>
 
@@ -87,7 +100,7 @@ const Services = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

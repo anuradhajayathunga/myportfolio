@@ -16,6 +16,7 @@ import Image from "next/image";
 import { useState } from "react";
 import BlurBlob from "./ui/BlurBlob";
 import { useTheme } from "next-themes";
+import { staggerContainer } from "@/lib/motionVariants";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
 const reviewData = [
@@ -90,7 +91,14 @@ const Review = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { theme } = useTheme();
   return (
-    <section className="relative  xl:py-24 scroll-mt-20 ">
+    <motion.section
+      id="review"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of section is visible
+      className="relative  xl:py-24 scroll-mt-20 "
+    >
       <div className="container max-auto">
         <div className="flex flex-col lg:flex-row justify-between">
           {/* image */}
@@ -198,7 +206,7 @@ const Review = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

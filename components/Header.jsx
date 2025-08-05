@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky  bg-transparent top-0 z-50 w-full transition-all ${
+      className={`sticky  bg-light-base dark:bg-dark-base  top-0 z-50 w-full transition-all ${
         isScrolled
           ? "bg-opacity-50 dark:bg-opacity-50 backdrop-blur-lg shadow-md z-50 "
           : "bg-transparent"

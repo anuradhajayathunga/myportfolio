@@ -4,11 +4,12 @@ import { Button } from "./ui/button";
 
 import "swiper/css";
 import "swiper/css/pagination";
-
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
 import ProjectCard from "@/components/ProjectCard";
+import { staggerContainer } from "@/lib/motionVariants";
 
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
@@ -98,7 +99,14 @@ const projectData = [
 
 const Work = () => {
   return (
-    <section id="mywork" className=" py-6 md:py-12 xl:py-12 scroll-mt-20 ">
+    <motion.section
+      id="mywork"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of section is visible
+      className=" py-6 md:py-12 xl:py-12 scroll-mt-20 "
+    >
       <div className="flex flex-col xl:flex-row items-center xl:items-start justify-center gap-8">
         {/* text */}
         <div className="w-full max-w-[400px] text-center xl:text-left mb-8 xl:mb-0">
@@ -150,7 +158,7 @@ const Work = () => {
           </Swiper>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

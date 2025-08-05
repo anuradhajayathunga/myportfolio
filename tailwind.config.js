@@ -93,6 +93,10 @@ module.exports = {
           accent4: "#f87171", // soft red
         },
       },
+      fontFamily: {
+        poppins: ["--font-poppins", "sans-serif"], // For headings or special text
+        roboto: ["Roboto", "sans-serif"], // Secondary font
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -24,7 +24,7 @@ const MobileNav = () => {
         {/* Middle Section */}
         <div className="mt-12">
           <Nav
-            containerStyles="flex flex-col gap-6 items-start "
+            containerStyles="sticky flex flex-col gap-6 items-start "
             linkStyles="relative text-xl font-medium hover:text-primary after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300 transition-colors"
             closeComponent={SheetClose} // pass close component
           />

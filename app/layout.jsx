@@ -2,9 +2,10 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 // components
-import ThemeProvider from "@/components/ThemeProvider";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ThemeProvider from "@/components/ThemeProvider";
+
 // Load Poppins font
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -25,13 +26,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} scroll-smooth dark`}>
-      <body className="font-poppins antialiased leading-8 overflow-x-hidden min-h-screen transition-colors duration-500 bg-light-base text-light-text dark:bg-dark-base dark:text-dark-text">
-        <Header />
-        <ThemeProvider attribute="class" defaultTheme="dark">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${poppins.variable} scroll-smooth `}
+    >
+      <body className=" antialiased leading-8 overflow-x-hidden min-h-screen transition-colors duration-500 bg-light-base text-light-text dark:bg-dark-base dark:text-dark-text ">
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <Header />
           {children}
+          <Footer />
         </ThemeProvider>
-        <Footer />
       </body>
     </html>
   );
