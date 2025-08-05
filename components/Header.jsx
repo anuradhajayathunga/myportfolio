@@ -37,7 +37,7 @@ const Header = () => {
         <Logo />
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex gap-x-10 items-center">
+        <nav className="items-center hidden xl:flex gap-x-10">
           {[
             { label: "Home", href: "/#home" },
             { label: "About", href: "/#about" },
@@ -54,7 +54,7 @@ const Header = () => {
             </Link>
           ))}
         </nav>
-{/* 
+        {/* 
          <Nav
             containerStyles="hidden xl:flex gap-x-10 items-center"
             linkStyles="relative font-medium transition-colors hover:text-primary after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-primary after:transition-all after:duration-300"

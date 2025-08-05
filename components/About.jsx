@@ -44,12 +44,7 @@ const infoData = [
     text: "+94 759 089 188",
   },
   {
-    icon: (
-      <MailOpen
-        className="text-secondary "
-        size={16}
-      />
-    ), // Steel Blue color
+    icon: <MailOpen className="text-secondary " size={16} />, // Steel Blue color
     text: "ishiwaraanuradha@gmail.com",
   },
 
@@ -150,9 +145,9 @@ const About = () => {
     >
       {/* Background Elements */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" /> */}
-      <div className="container mx-auto relative z-10">
+      <div className="absolute rounded-full top-1/3 left-1/4 w-96 h-96 bg-primary/10 blur-3xl" />
+      <div className="absolute rounded-full bottom-1/3 right-1/4 w-80 h-80 bg-secondary/10 blur-3xl" /> */}
+      <div className="container relative z-10 mx-auto">
         <div className="flex flex-col items-center justify-between">
           <motion.div
             variants={staggerContainer}
@@ -169,14 +164,14 @@ const About = () => {
               className="mb-8 text-5xl font-bold text-primary xl:mb-16"
             >
               About{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text">
                 {" "}
                 me
               </span>
             </motion.h2>
           </motion.div>
         </div>
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid items-start gap-16 lg:grid-cols-2">
           {/* image */}
           <motion.div
             variants={scaleIn(0.4)}
@@ -238,7 +233,7 @@ const About = () => {
                       description with insights into myself, my vocational
                       journey, and what I engage in professionally.
                     </p> */}
-                      <p className="mb-2 font-light text-lg text-muted ">
+                      <p className="mb-2 text-lg font-light text-destructive ">
                         Hello!
                         <span className="font-semibold text-md text-destructive">
                           {" "}
@@ -254,7 +249,7 @@ const About = () => {
                         that not only look great but also provide an exceptional
                         user experience.
                       </p>
-                      <p className="mt-4 mb-6 font-light text-lg text-muted">
+                      <p className="mt-4 mb-6 text-lg font-light text-muted">
                         My journey in web development has equipped me with a
                         diverse set of skills, including{" "}
                         <span className="font-semibold text-md text-destructive">
@@ -295,7 +290,7 @@ const About = () => {
                     {/* CTA Buttons */}
                     <motion.div
                       variants={fadeInUp(0.4)}
-                      className="flex flex-col sm:flex-row gap-4 pt-4"
+                      className="flex flex-col gap-4 pt-4 sm:flex-row"
                     >
                       {" "}
                       <Link
@@ -304,18 +299,18 @@ const About = () => {
                       >
                         <Button
                           variant=""
-                          className="w-full group  hover:shadow-2xl transition-all duration-300"
+                          className="w-full transition-all duration-300 group hover:shadow-2xl"
                         >
                           HIRE ME
                           <Send
                             size={18}
-                            className="ml-2 group-hover:translate-x-1 transition-transform"
+                            className="ml-2 transition-transform group-hover:translate-x-1"
                           />
                         </Button>
                       </Link>
                       <Button
                         variant="outline"
-                        className="group transition-all duration-300"
+                        className="transition-all duration-300 group"
                       >
                         <a href={`${prefix}/about/Anuradha's  cv.pdf`} download>
                           DOWNLOAD CV
@@ -437,7 +432,7 @@ const About = () => {
                         {["English", "Sinhala", "Tamil"].map((lang, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1 bg-primary/10  rounded-full text-sm font-medium "
+                            className="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 "
                           >
                             {lang}
                           </span>
@@ -469,7 +464,7 @@ const About = () => {
                       {/* skills list */}
                       <motion.div
                         variants={fadeInUp(0.2)}
-                        className="grid sm:grid-cols-2 gap-4"
+                        className="grid gap-4 sm:grid-cols-2"
                       >
                         {getData(SkillData, "skills").data.map(
                           (skill, index) => {
@@ -477,19 +472,19 @@ const About = () => {
                               <motion.div
                                 key={index}
                                 variants={fadeInUp(0.1 * index)}
-                                className="p-3 rounded-xl bg-light-muted/10 backdrop-blur-sm border border-border/10 hover:border-primary/50 transition-all duration-300 group"
+                                className="p-3 transition-all duration-300 border rounded-xl bg-light-muted/10 backdrop-blur-sm border-border/10 hover:border-primary/50 group"
                               >
-                                <div className="flex justify-between items-center mb-2">
+                                <div className="flex items-center justify-between mb-2">
                                   <span className="font-medium">
                                     {skill.name}
                                   </span>
-                                  <span className="text-sm text-primary font-semibold">
+                                  <span className="text-sm font-semibold text-primary">
                                     {skill.level}%
                                   </span>
                                 </div>
-                                <div className="w-full bg-light-muted rounded-full h-2">
+                                <div className="w-full h-2 rounded-full bg-light-muted">
                                   <motion.div
-                                    className="bg-gradient-to-r from-light-primary to-light-secondary h-2 rounded-full"
+                                    className="h-2 rounded-full bg-gradient-to-r from-light-primary to-light-secondary"
                                     initial={{ width: 0 }}
                                     whileInView={{ width: `${skill.level}%` }}
                                     transition={{
@@ -499,7 +494,7 @@ const About = () => {
                                     viewport={{ once: true }}
                                   />
                                 </div>
-                                <div className="text-xs text-light-bg-light-muted-foreground mt-1">
+                                <div className="mt-1 text-xs text-light-bg-light-muted-foreground">
                                   {skill.category}
                                 </div>
                               </motion.div>
@@ -517,7 +512,7 @@ const About = () => {
                       <motion.div>
                         <motion.h4
                           variants={fadeInUp(0.2)}
-                          className="mb-2 mt-8 font-bold h4"
+                          className="mt-8 mb-2 font-bold h4"
                         >
                           Tools
                         </motion.h4>
@@ -534,9 +529,9 @@ const About = () => {
                                   key={index}
                                   variants={scaleIn(0.1 * index)}
                                   whileHover={{ scale: 1.05, y: -5 }}
-                                  className="p-2 rounded-full bg-background dark:bg-white/90 border border-border/50 hover:border-primary/50 shadow-sm hover:shadow-xl transition-all duration-300 text-center group"
+                                  className="p-2 text-center transition-all duration-300 border rounded-full shadow-sm bg-background dark:bg-white/90 border-border/50 hover:border-primary/50 hover:shadow-xl group"
                                 >
-                                  {/* <div className=" text-sm font-medium  text-primary opacity-0 hover:opacity-100">
+                                  {/* <div className="text-sm font-medium opacity-0 text-primary hover:opacity-100">
                                     {tool.name}
                                   </div> */}
                                   <Image

@@ -1,4 +1,9 @@
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { AlignJustify } from "lucide-react";
 import ThemeTogggler from "./ThemeTogggler";
 import Nav from "./Nav";
@@ -12,11 +17,11 @@ const MobileNav = () => {
         <AlignJustify className="cursor-pointer text-[28px]" />
       </SheetTrigger>
 
-      <SheetContent className="flex flex-col justify-between px-6 pt-2 md:pt-1 pb-10">
+      <SheetContent className="flex flex-col justify-between px-6 pt-2 pb-10 md:pt-1">
         {/* Top Section */}
         <div className="flex items-center justify-between mr-6 md:pr-6 ">
           <Logo />
-          <div className="opacity-60 hover:opacity-100 transition-opacity">
+          <div className="transition-opacity opacity-60 hover:opacity-100">
             <ThemeTogggler />
           </div>
         </div>

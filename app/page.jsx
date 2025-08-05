@@ -4,6 +4,7 @@ import Contactme from "@/components/Contactme";
 
 import Hero from "@/components/Hero";
 import Review from "@/components/Review";
+// import Sample from "@/components/Sample";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
       <About />
       <Services />
       <Work />
+      {/* <Sample /> */}
       <Review />
       <Contactme />
     </main>

@@ -9,7 +9,7 @@ import {
   MailIcon,
   ArrowRightIcon,
   Mail,
-  MessageSquare ,
+  MessageSquare,
   Send,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -63,7 +63,7 @@ const Form = () => {
   return (
     <div className="bg-transparent rounded-md">
       {/* <div className="mb-8">
-        <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3">
+        <h3 className="mb-3 text-2xl font-bold text-zinc-900 dark:text-white">
           Send Me a Message
         </h3>
         <p className="text-zinc-600 dark:text-zinc-400">
@@ -74,7 +74,7 @@ const Form = () => {
       <form onSubmit={onSubmit} className="space-y-8">
         {/* Name Input */}
         <div className="relative">
-          {/* <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
+          {/* <label className="block mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
             Full Name *
           </label> */}
           <div className="relative">
@@ -86,13 +86,13 @@ const Form = () => {
               required
               className="pr-3"
             />
-            <User className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zinc-400 dark:text-zinc-500" />
+            <User className="absolute w-5 h-5 transform -translate-y-1/2 right-4 top-1/2 text-zinc-400 dark:text-zinc-500" />
           </div>
         </div>
 
         {/* Email Input */}
         <div className="relative">
-          {/* <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
+          {/* <label className="block mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
             Email Address *
           </label> */}
           <div className="relative">
@@ -104,13 +104,13 @@ const Form = () => {
               required
               className="pr-3"
             />
-            <Mail className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zinc-400 dark:text-zinc-500" />
+            <Mail className="absolute w-5 h-5 transform -translate-y-1/2 right-4 top-1/2 text-zinc-400 dark:text-zinc-500" />
           </div>
         </div>
 
         {/* Message Input */}
         <div className="relative">
-          {/* <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
+          {/* <label className="block mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
             Message *
           </label> */}
           <div className="relative">
@@ -121,18 +121,18 @@ const Form = () => {
               required
               className="pr-3"
             />
-            <MessageSquare  className="absolute right-4 top-4 w-5 h-5 text-zinc-400 dark:text-zinc-500" />
+            <MessageSquare className="absolute w-5 h-5 right-4 top-4 text-zinc-400 dark:text-zinc-500" />
           </div>
         </div>
 
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+          className="w-full font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 hover:shadow-xl hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
         >
           {isSubmitting ? (
             <>
-              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
+              <div className="w-5 h-5 mr-2 border-2 rounded-full border-white/30 border-t-white animate-spin"></div>
               Sending...
             </>
           ) : (

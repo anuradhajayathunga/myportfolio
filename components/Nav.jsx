@@ -32,23 +32,23 @@ const Nav = ({ containerStyles, linkStyles }) => {
     }
   };
 
-useEffect(() => {
-  if (pathname === "/" && pendingScrollTarget) {
-    const scrollTarget = pendingScrollTarget;
+  useEffect(() => {
+    if (pathname === "/" && pendingScrollTarget) {
+      const scrollTarget = pendingScrollTarget;
 
-    // Use requestAnimationFrame for smoother DOM readiness
-    const frame = requestAnimationFrame(() => {
-      scroller.scrollTo(scrollTarget, {
-        smooth: true,
-        duration: 500,
-        offset: -80,
+      // Use requestAnimationFrame for smoother DOM readiness
+      const frame = requestAnimationFrame(() => {
+        scroller.scrollTo(scrollTarget, {
+          smooth: true,
+          duration: 500,
+          offset: -80,
+        });
+        setPendingScrollTarget(null);
       });
-      setPendingScrollTarget(null);
-    });
 
-    return () => cancelAnimationFrame(frame);
-  }
-}, [pathname, pendingScrollTarget]);
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [pathname, pendingScrollTarget]);
 
   return (
     <nav className={`${containerStyles}`}>

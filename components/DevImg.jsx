@@ -34,7 +34,7 @@ const DevImg = ({ containerStyles, lightbg, bg, imgSrc }) => {
         alt="Developer"
         fill
         priority
-        className="object-contain z-10"
+        className="z-10 object-contain"
       />
     </div>
   );

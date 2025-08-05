@@ -97,12 +97,12 @@ const Review = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of section is visible
-      className="relative  xl:py-24 scroll-mt-20 "
+      className="relative xl:py-24 scroll-mt-20 "
     >
       <div className="container max-auto">
-        <div className="flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col justify-between lg:flex-row">
           {/* image */}
-          <div className="hidden lg:flex flex-1 relative">
+          <div className="relative flex-1 hidden lg:flex">
             <BlurBlob
               variant="primary"
               position="top-left"
@@ -140,7 +140,7 @@ const Review = () => {
                   <img
                     src={person.avatar}
                     alt={person.name}
-                    className="w-full h-full object-cover rounded-full"
+                    className="object-cover w-full h-full rounded-full"
                   />
                 </motion.div>
               );
@@ -152,7 +152,7 @@ const Review = () => {
             <div className="text-[10px] uppercase font-semibold text-light-text tracking-[1px]  dark:text-white text-left">
               WHAT PEOPLE SAY ABOUT ME
             </div>
-            <h2 className="text-5xl font-bold text-primary mb-6 xl:mb-24  text-left">
+            <h2 className="mb-6 text-5xl font-bold text-left text-primary xl:mb-24">
               Testimonial
             </h2>
             <Swiper
@@ -175,12 +175,12 @@ const Review = () => {
                       transition={{ duration: 0.5 }}
                     >
                       <Card className="bg-tertiary/40 dark:secondary/40 p-6 xl:p-10 mx-auto min-h-[100px]  ">
-                        <CardDescription className="text-muted-foreground  text-xl mb-2 font-light">
-                          <span className="font-bold text-4xl font-mono">
+                        <CardDescription className="mb-2 text-xl font-light text-muted-foreground">
+                          <span className="font-mono text-4xl font-bold">
                             "
                           </span>
                           {person.comment}
-                          <span className="font-bold text-3xl font-mono">
+                          <span className="font-mono text-3xl font-bold">
                             "
                           </span>
                         </CardDescription>

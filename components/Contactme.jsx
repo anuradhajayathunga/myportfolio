@@ -6,18 +6,18 @@ const Contactme = () => {
     <section className=" xl:px-[0%]">
       <div className="relative ">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-400/10 dark:to-purple-400/10 rounded-3xl blur-3xl"></div>
-        <div className="relative  xl:h-full bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-700 p-8 flex items-center justify-center overflow-hidden">
-          <div className="text-center space-y-4">
-            {/* <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-500 dark:to-blue-600 rounded-full flex items-center justify-center shadow-2xl">
+        <div className="relative flex items-center justify-center p-8 overflow-hidden xl:h-full bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-700">
+          <div className="space-y-4 text-center">
+            {/* <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full shadow-2xl bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-500 dark:to-blue-600">
               <MessageSquare className="w-12 h-12 text-white" />
             </div> */}
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold text-zinc-600 dark:text-zinc-200">
+            <p className="text-2xl font-bold text-center md:text-3xl lg:text-4xl xl:text-5xl text-zinc-600 dark:text-zinc-200">
               Prepared to turn your ideas into reality?
               <br /> <span className="lg:mt-2">I'm here to help you.</span>
               {/* Let's discuss your ideas and create something amazing together. */}
               {/* <br /> Get in touch to begin your journey. */}
             </p>
-            <div className=" flex max-w-md p-2 mx-auto mt-8 rounded-full border border-gradient-to-br from-blue-500 to-purple-500 dark:from-blue-500 dark:to-purple-500">
+            <div className="flex max-w-md p-2 mx-auto mt-8 border rounded-full border-gradient-to-br from-blue-500 to-purple-500 dark:from-blue-500 dark:to-purple-500">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -30,8 +30,8 @@ const Contactme = () => {
             </div>
           </div>
           {/* Floating elements */}
-          <div className="absolute top-8 right-8 w-16 h-16 bg-cyan-400/20 dark:bg-cyan-400/10 rounded-full blur-xl"></div>
-          <div className="absolute bottom-12 left-8 w-20 h-20 bg-purple-400/20 dark:bg-purple-400/10 rounded-full blur-xl"></div>
+          <div className="absolute w-16 h-16 rounded-full top-8 right-8 bg-cyan-400/20 dark:bg-cyan-400/10 blur-xl"></div>
+          <div className="absolute w-20 h-20 rounded-full bottom-12 left-8 bg-purple-400/20 dark:bg-purple-400/10 blur-xl"></div>
         </div>
       </div>
     </section>
