@@ -41,7 +41,7 @@ const infoData = [
   // },
   {
     icon: <PhoneCall className="text-secondary" size={16} />, // Lime Green color
-    text: "+94 759 089 188",
+    text: "+94 743-119-199",
   },
   {
     icon: <MailOpen className="text-secondary " size={16} />, // Steel Blue color
@@ -139,8 +139,7 @@ const About = () => {
       className="py-6 lg:py-12 xl:py-16 scroll-mt-10"
       variants={staggerContainer}
       initial="hidden"
-      // whileInView="show"
-      animate="show" // ✅ Always show on render
+      whileInView="show"
       viewport={{ once: true, amount: 0.2 }} // Trigger when 30% of section is visible
     >
       {/* Background Elements */}
@@ -233,7 +232,7 @@ const About = () => {
                       description with insights into myself, my vocational
                       journey, and what I engage in professionally.
                     </p> */}
-                      <p className="mb-2 text-lg font-light text-destructive ">
+                      <p className="mb-2 text-lg font-light text-muted ">
                         Hello!
                         <span className="font-semibold text-md text-destructive">
                           {" "}

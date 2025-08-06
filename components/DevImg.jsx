@@ -25,7 +25,7 @@ const DevImg = ({ containerStyles, lightbg, bg, imgSrc }) => {
         alt="Blurred Shadow"
         fill
         priority
-        className="object-contain blur-3xl opacity-30 dark:opacity-40 scale-105 z-[-1]"
+        className="object-contain blur-3xl opacity-50 dark:opacity-30 scale-105 z-[-1]"
       />
 
       {/* Foreground image */}

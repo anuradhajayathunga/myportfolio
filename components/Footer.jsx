@@ -15,11 +15,9 @@ const Footer = () => {
             height={36}
             className="object-contain"
           /> */}
-          <span className="text-3xl font-bold text-foreground dark:text-white font-poppins">
+          <span className="text-3xl font-bold tracking-tight text-foreground">
             anu
-            <span className="text-4xl text-light-primary dark:text-dark-primary">
-              .
-            </span>
+            <span className="text-4xl text-primary ">.</span>
           </span>
         </Link>
 

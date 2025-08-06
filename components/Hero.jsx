@@ -31,15 +31,15 @@ const badgesData = [
     id: 1,
     containerStyles: "absolute top-[24%] -left-[5rem] ",
     icon: <RiBriefcase4Fill className="text-purple-500 " />,
-    endCountNum: 4,
+    endCountNum: 3,
     endCountText: "+",
-    badgeText: "Years of Experience",
+    badgeText: "Years Experience",
   },
   {
     id: 2,
     containerStyles: "absolute top-[80%] -left-[1rem] ",
     icon: <RiTodoFill className="text-green-500" />,
-    endCountNum: 25,
+    endCountNum: 50,
     endCountText: "+",
     badgeText: "Project Completed",
   },
@@ -48,8 +48,8 @@ const badgesData = [
     containerStyles: "absolute top-[55%] -right-[1rem] ",
     icon: <RiTeamFill className="text-orange-600" />,
     endCountNum: 100,
-    endCountText: "+",
-    badgeText: "Happy Clients",
+    endCountText: "%",
+    badgeText: "Client Satisfaction",
   },
 ];
 
@@ -163,7 +163,7 @@ const Hero = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="relative items-start justify-start hidden lg:flex "
+            className="relative items-center justify-center hidden lg:flex "
           >
             <BlurBlob
               variant="primary"
@@ -210,6 +210,7 @@ const Hero = () => {
                   icon={badge.icon}
                   endCountNum={badge.endCountNum}
                   badgeText={badge.badgeText}
+                  endCountText={badge.endCountText}
                 />
               </motion.div>
             ))}

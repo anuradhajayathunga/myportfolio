@@ -18,7 +18,7 @@ const Badge = ({
       {/* Content Section */}
       <div className="flex items-center flex-1 overflow-hidden">
         {/* CountUp Component */}
-        <div className="mr-2 text-xs font-bold leading-none text-black md:text-4xl dark:text-white">
+        <div className="mr-2 text-xs font-bold leading-none  md:text-4xl ">
           <CountUp
             start={0} // Optional: Specify a starting number (default is 0)
             end={endCountNum}
@@ -31,6 +31,7 @@ const Badge = ({
 
         {/* Badge Text */}
         <div className="text-black dark:text-white max-w-[800px] leading-none text-xs md:text-sm font-semibold">
+          
           {badgeText}
         </div>
       </div>
