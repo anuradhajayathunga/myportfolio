@@ -29,7 +29,7 @@ const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 const badgesData = [
   {
     id: 1,
-    containerStyles: "absolute top-[24%] -left-[2rem] ",
+    containerStyles: "absolute top-[24%] -left-[5rem] ",
     icon: <RiBriefcase4Fill className="text-purple-500 " />,
     endCountNum: 4,
     endCountText: "+",
