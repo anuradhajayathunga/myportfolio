@@ -139,7 +139,8 @@ const About = () => {
       className="py-6 lg:py-12 xl:py-16 scroll-mt-10"
       variants={staggerContainer}
       initial="hidden"
-      whileInView="show"
+      // whileInView="show"
+      animate="show"
       viewport={{ once: true, amount: 0.2 }} // Trigger when 30% of section is visible
     >
       {/* Background Elements */}
