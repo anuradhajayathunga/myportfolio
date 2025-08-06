@@ -135,19 +135,23 @@ const About = () => {
   const { theme } = useTheme();
   return (
     <motion.section
-      id="about"
-      className="py-6 lg:py-12 xl:py-16 scroll-mt-10"
       variants={staggerContainer}
       initial="hidden"
-      // whileInView="show"
-      animate="show"
-      viewport={{ once: true, amount: 0.2 }} // Trigger when 30% of section is visible
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of section is visible
+      id="about"
+      className="py-6 lg:py-12 xl:py-16 scroll-mt-10"
     >
       {/* Background Elements */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
       <div className="absolute rounded-full top-1/3 left-1/4 w-96 h-96 bg-primary/10 blur-3xl" />
       <div className="absolute rounded-full bottom-1/3 right-1/4 w-80 h-80 bg-secondary/10 blur-3xl" /> */}
-      <div className="container relative z-10 mx-auto">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="show"
+        className="container relative z-10 mx-auto"
+      >
         <div className="flex flex-col items-center justify-between">
           <motion.div
             variants={staggerContainer}
@@ -554,7 +558,7 @@ const About = () => {
             </Tabs>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };
