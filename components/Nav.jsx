@@ -2,8 +2,8 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Link as ScrollLink, scroller } from "react-scroll";
 import { useEffect, useState } from "react";
+import { scroller } from "react-scroll";
 
 const links = [
   { name: "home", id: "home" },
@@ -16,22 +16,33 @@ const links = [
 const Nav = ({ containerStyles, linkStyles }) => {
   const pathname = usePathname();
   const router = useRouter();
-
   const [pendingScrollTarget, setPendingScrollTarget] = useState(null);
 
-  const handleScrollLink = (id) => {
-    if (pathname !== "/") {
-      setPendingScrollTarget(id);
-      router.push("/");
-    } else {
-      scroller.scrollTo(id, {
+  // Handles in-page or cross-page scroll linking
+  const handleLinkClick = (e, link) => {
+    e.preventDefault();
+
+    // If external link (e.g. /contact), just use router.push
+    if (link.path) {
+      router.push(link.path);
+      return;
+    }
+
+    // If already on homepage
+    if (pathname === "/") {
+      scroller.scrollTo(link.id, {
         smooth: true,
         duration: 500,
         offset: -80,
       });
+    } else {
+      // Navigate to homepage and remember what to scroll to
+      setPendingScrollTarget(link.id);
+      router.push("/");
     }
   };
 
+  // After navigating to "/", scroll to the target
   useEffect(() => {
     if (pathname === "/" && pendingScrollTarget) {
       const scrollTarget = pendingScrollTarget;
@@ -46,48 +57,24 @@ const Nav = ({ containerStyles, linkStyles }) => {
         setPendingScrollTarget(null);
       });
 
-      return () => cancelAnimationFrame(frame);
+      // Use small timeout to ensure DOM is mounted
+      const timeout = setTimeout(frame, 100);
+      return () => clearTimeout(timeout);
     }
   }, [pathname, pendingScrollTarget]);
 
   return (
     <nav className={`${containerStyles}`}>
-      {links.map((link, index) => {
-        if (link.path) {
-          return (
-            <Link
-              key={index}
-              href={link.path}
-              className={`capitalize ${linkStyles}`}
-            >
-              {link.name}
-            </Link>
-          );
-        }
-
-        return pathname === "/" ? (
-          <ScrollLink
-            key={index}
-            to={link.id}
-            smooth={true}
-            duration={500}
-            offset={-80}
-            spy={true}
-            className={`capitalize cursor-pointer ${linkStyles}`}
-            activeClass="active"
-          >
-            {link.name}
-          </ScrollLink>
-        ) : (
-          <button
-            key={index}
-            onClick={() => handleScrollLink(link.id)}
-            className={`capitalize cursor-pointer ${linkStyles}`}
-          >
-            {link.name}
-          </button>
-        );
-      })}
+      {links.map((link, index) => (
+        <a
+          key={index}
+          href={link.path || `/#${link.id}`}
+          onClick={(e) => handleLinkClick(e, link)}
+          className={`capitalize cursor-pointer ${linkStyles}`}
+        >
+          {link.name}
+        </a>
+      ))}
     </nav>
   );
 };
