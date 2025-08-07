@@ -416,7 +416,7 @@ const Review = () => {
             className="flex-2 space-y-8 w-full xl:max-w-[1100px]"
           >
             {/* Section Header */}
-            <div className="space-y-0 text-center lg:text-left lg:space-y-4">
+            <div className="space-y-0 text-center lg:text-left lg:space-y-0">
               <motion.div
                 variants={textReveal()}
                 className="text-[12px]  lg:text-sm font-semibold tracking-wider  uppercase"
@@ -426,7 +426,7 @@ const Review = () => {
 
               <motion.h2
                 variants={textReveal(0.1)}
-                className="text-4xl xl:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
               >
                 Testimonial
               </motion.h2>
