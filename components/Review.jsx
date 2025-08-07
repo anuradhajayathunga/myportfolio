@@ -32,10 +32,10 @@ import {
 import { BsChatQuoteFill } from "react-icons/bs";
 import { useIsMobile } from "@/hooks/useIsMobile";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
-
+import { positions } from "@/lib/positions";
 const reviewData = [
   {
-    avatar: `${prefix}/reviews/avatar-1.png`,
+    avatar: `${prefix}/reviews/avatar-5.png`,
     name: "Sarah M.",
     title: "Startup Founder",
     company: "TechFlow Solutions",
@@ -45,7 +45,7 @@ const reviewData = [
     rating: 5,
   },
   {
-    avatar: `${prefix}/reviews/avatar-2.png`,
+    avatar: `${prefix}/reviews/avatar-6.png`,
     name: "Michael T.",
     title: "Business Owner",
     company: "Digital Commerce Co.",
@@ -55,7 +55,7 @@ const reviewData = [
     rating: 5,
   },
   {
-    avatar: `${prefix}/reviews/avatar-3.png`,
+    avatar: `${prefix}/reviews/avatar-4.png`,
     name: "Jennifer L.",
     title: "Product Manager",
     company: "DataVision Analytics",
@@ -65,7 +65,7 @@ const reviewData = [
     rating: 5,
   },
   {
-    avatar: `${prefix}/reviews/avatar-4.png`,
+    avatar: `${prefix}/reviews/avatar-3.png`,
     name: "Lisa K.",
     title: "Tech Entrepreneur",
     company: "InnovateHub",
@@ -75,7 +75,7 @@ const reviewData = [
     rating: 5,
   },
   {
-    avatar: `${prefix}/reviews/avatar-5.png`,
+    avatar: `${prefix}/reviews/avatar-1.png`,
     name: "Amanda S.",
     title: "Marketing Manager",
     company: "GrowthMetrics",
@@ -85,7 +85,7 @@ const reviewData = [
     rating: 4,
   },
   {
-    avatar: `${prefix}/reviews/avatar-6.png`,
+    avatar: `${prefix}/reviews/avatar-2.png`,
     name: "Robert K.",
     title: "CTO",
     company: "TechInnovate",
@@ -95,9 +95,6 @@ const reviewData = [
     rating: 5,
   },
 ];
-
-// Enhanced floating positions with more dynamic placement
-import { positions } from "@/lib/positions";
 
 const blobShapes = [
   // {
@@ -169,14 +166,14 @@ const Review = () => {
           {/* Left Side - Image with Floating Avatars */}
           <motion.div
             variants={slideInLeft()}
-            className="relative flex-1 flex justify-center lg:justify-start "
+            className="relative flex-1 flex justify-center lg:justify-start max-w-lg "
           >
             {/* Enhanced Background Blur */}
-            <div className="relative hidden lg:block">
+            <div className="relative hidden md:block">
               <BlurBlob
                 variant="primary"
                 position="top-left"
-                size={700}
+                size={500}
                 animated
               />
             </div>
@@ -355,11 +352,13 @@ const Review = () => {
             {/* <motion.div
               variants={fadeInUp(1)}
               className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-xl"
-            /> */}
-            {/* <motion.div
+            /> 
+             <motion.div
               variants={fadeInUp(1.2)}
               className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-tr from-secondary/15 to-primary/15 rounded-full blur-2xl"
             /> */}
+            <div className="absolute -top-6 -right-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-secondary rounded-full opacity-60 blur-sm " />
+            <div className="absolute -bottom-6 -left-6 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-secondary to-primary rounded-full opacity-40 blur-sm" />
           </motion.div>
 
           {/* Right Side - Content */}
