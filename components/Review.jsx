@@ -29,6 +29,7 @@ import {
   floatIn,
   cardHover,
 } from "@/lib/motionVariants";
+import { BsChatQuoteFill } from "react-icons/bs";
 
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
@@ -93,126 +94,54 @@ const reviewData = [
     date: "October 2023",
     rating: 5,
   },
+    {
+    avatar: `${prefix}/reviews/avatar-6.png`,
+    name: "Robert K.",
+    title: "CTO",
+    company: "TechInnovate",
+    comment:
+      "Professional and reliable! The design system they created has become the foundation of our entire product suite. Clean, scalable, and perfectly documented. Highly recommended for any serious project.",
+    date: "October 2023",
+    rating: 5,
+  },
 ];
 
-// const positions = [
-//   {
-//     position: "top-8 left-1/2 -translate-x-1/2",
-//     delay: 0,
-//     scale: 1.0,
-//     size: 48, // More consistent, professional sizing
-//   },
-//   {
-//     position: "top-1/3 right-8",
-//     delay: 0.15,
-//     scale: 0.95,
-//     //size: 52,
-//     size: 48
-//   },
-//   {
-//     position: "top-2/3 right-12",
-//     delay: 0.3,
-//     scale: 1.05,
-//     //size: 44,
-//     size: 48
-//   },
-//   {
-//     position: "bottom-8 right-1/3",
-//     delay: 0.45,
-//     scale: 1.0,
-//     //size: 56,
-//     size: 48
-//   },
-//   {
-//     position: "bottom-8 left-1/3",
-//     delay: 0.6,
-//     scale: 0.9,
-//     //size: 48,
-//     size: 48
-//   },
-//   {
-//     position: "top-2/3 left-12",
-//     delay: 0.75,
-//     scale: 1.1,
-//     //size: 40,
-//     size: 48
-//   },
-//   {
-//     position: "top-1/3 left-8",
-//     delay: 0.9,
-//     scale: 0.95,
-//     //size: 52,
-//     size: 48
-//   },
-//   {
-//     position: "bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2",
-//     delay: 1.05,
-//     scale: 0.85,
-//     //size: 36,
-//     size: 48
-//   },
-// ];
+// Enhanced floating positions with more dynamic placement
 const positions = [
-  {
-    position: "top-8 left-1/2 -translate-x-1/2",
-    delay: 0,
-    scale: 1.1,
-    size: 48, // More consistent, professional sizing
-  },
-  {
-    position: "top-1/4 -right-4 -translate-y-1/2",
-    delay: 0.2,
-    scale: 0.9,
-    size: 32, // More consistent, professional sizing
-  },
-  {
-    position: "bottom-1/3 -right-6 translate-y-1/2",
-    delay: 0.4,
-    scale: 1.0,
-    size: 32, // More consistent, professional sizing
-  },
-  {
-    position: "bottom-0 left-1/2 -translate-x-1/2",
-    delay: 0.6,
-    scale: 1.1,
-    size: 40, // More consistent, professional sizing
-  },
-  {
-    position: "bottom-1/3 -left-4 translate-y-1/2",
-    delay: 0.8,
-    scale: 0.9,
-    size: 32, // More consistent, professional sizing
-  },
-  {
-    position: "top-1/4 -left-6 -translate-y-1/2",
-    delay: 1.0,
-    scale: 1.0,
-    size: 32, // More consistent, professional sizing
-  },
+  { position: "top-4 left-8 ", scale: 1.0, delay: 0 },
+  { position: "top-12 right-12 ", scale: 0.9, delay: 0.1 },
+  { position: "top-32 left-4 lg:left-24 -z-20", scale: 0.8, delay: 0.2 },
+  { position: "top-48 right-8", scale: 0.85, delay: 0.3 },
+  { position: "top-20 left-1/2 -translate-x-1/2", scale: 0.9, delay: 0.4 },
+  { position: "top-72 lg:top-64 right-24 -z-10", scale: 0.75, delay: 0.5 },
+  { position: "-top-10 left-1/2 -z-10", scale: 0.75, delay: 0.5 },
 ];
 const blobShapes = [
   // {
-  //   viewBox: "0 0 200 200",
-  //   path: "M25.7,15.7C16.9,30.1,-18,30.3,-26.6,16C-35.3,1.6,-17.6,-27.3,-0.2,-27.4C17.3,-27.5,34.6,1.2,25.7,15.7Z",
+  //   viewBox: "0 0 505 505",
+  //   path: "M414.573 43.0779C455.283 71.8338 484.948 116.39 497.571 164.106C509.879 212.137 505.461 263.329 494.731 317.365C483.686 371.401 466.013 427.965 427.827 462.093C389.642 496.537 330.312 508.545 274.454 504.121C218.595 499.697 165.893 478.525 125.814 445.029C85.4189 411.217 57.6476 364.765 33.9788 312.309C10.31 259.853 -9.25622 201.077 4.62947 151.466C18.1996 101.538 64.906 60.7738 114.768 34.8619C164.946 9.26592 217.964 -1.16205 270.351 0.101943C322.738 1.36594 374.178 14.3219 414.573 43.0779Z",
+  // },
+  // {
+  //   viewBox: "0 0 505 505",
+  //   path: "M304.32 452.526C235.082 490.701 145.401 505.671 89.759 470.553C34.2055 435.103 13.0224 349.654 4.57418 269.744C-3.96273 190.165 0.235096 116.126 38.4741 68.9353C76.8018 21.4138 149.679 0.168287 225.796 0C301.493 0.073637 380.607 20.5629 422.153 72.4682C463.611 124.704 467.59 208.026 445.016 280.332C422.685 353.059 373.559 414.35 304.32 452.526Z",
+  // },
+  // {
+  //   viewBox: "0 0 509 462",
+  //   path: "M430.684 91.8476C485.587 148.958 523.332 231.872 503.773 294.831C483.871 357.79 406.664 400.451 331.516 429.351C256.711 458.25 183.965 473.388 128.376 448.617C72.4443 423.846 32.983 358.822 13.0808 285.198C-6.47826 211.917 -7.16455 130.036 32.2967 76.3658C72.1011 22.6955 151.71 -2.76337 227.544 0.332983C303.722 3.08531 375.781 34.7369 430.684 91.8476Z"
   // },
   {
-    viewBox: "100 100 213 197",
-    path: "M187.72 169.75C158.2 200.02 116.58 196.61 111.02 196.07C68.96 191.95 44.61 160.48 27.89 138.87C13.1 119.75 -2.50001 99.5999 0.539988 73.1499C3.70999 45.4899 25.25 28.3499 33.22 21.9899C77.84 -13.5501 136.06 4.75992 139.8 5.99992C149.8 9.31992 176.36 18.1399 194.51 44.3699C218.83 79.5099 220.94 135.69 187.72 169.75Z",
+    viewBox: "0 0 213 197",
+    path: "  M187.72 169.75C158.2 200.02 116.58 196.61 111.02 196.07C68.96 191.95 44.61 160.48 27.89 138.87C13.1 119.75 -2.50001 99.5999 0.539988 73.1499C3.70999 45.4899 25.25 28.3499 33.22 21.9899C77.84 -13.5501 136.06 4.75992 139.8 5.99992C149.8 9.31992 176.36 18.1399 194.51 44.3699C218.83 79.5099 220.94 135.69 187.72 169.75Z",
   },
   // {
-  //   viewBox: "100 100 220 204",
-  //   path: "M151.63 138.47C108.78 167.13 112.13 198.85 88.13 203.43C55.14 209.71 -0.829999 159.27 0.960001 102.59C2.74 46.09 61 13.12 99.95 4.33997C106.96 2.75997 175.79 -11.7501 205.96 30.9299C220.35 51.2899 224.69 82.8999 211.5 104.06C199.26 123.7 182.03 118.13 151.64 138.46L151.63 138.47Z",
-  // },
-  // {
-  //   viewBox: "100 100 441 373",
+  //   viewBox: "0 0 441 373",
   //   path: "M387.6 333.108C335.518 376.871 260.164 376.061 192.484 369.274C160.51 366.067 128.306 361.962 98.128 350.961C67.949 339.96 39.61 321.417 22.118 294.479C5.79701 269.335 -0.0479985 238.5 0.751001 208.529C3.269 114.118 75.415 25.935 167.462 4.765C206.202 -4.141 251.325 1.07993 293.837 16.3669C347.249 35.5719 392.215 73.439 418.142 123.931C425.258 137.79 430.904 152.371 434.757 167.579C449.621 226.218 433.924 294.205 387.6 333.108Z",
   // },
 ];
-
 // Star rating component
 const StarRating = ({ rating }) => {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 ">
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
@@ -235,58 +164,59 @@ const StarRating = ({ rating }) => {
     </div>
   );
 };
+
 const Review = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { theme } = useTheme();
+
   return (
     <motion.section
       id="review"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of section is visible
-      className="relative xl:py-24 scroll-mt-20 "
+      viewport={{ once: true, amount: 0.2 }}
+      className="relative py-20 xl:py-32 scroll-mt-20 overflow-hidden"
     >
       {/* Background Elements */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 dark:from-primary/10 dark:to-secondary/10" /> */}
 
-      <div className="container max-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center justify-between">
-          {/* image */}
-          <div className="relative hidden  flex-2 lg:flex-1 items-center justify-center lg:justify-start max-w-[250px] lg:max-w-lg">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+          {/* Left Side - Image with Floating Avatars */}
+          <motion.div
+            variants={slideInLeft()}
+            className="relative flex-1  justify-center lg:justify-start max-w-sm lg:max-w-lg"
+          >
+            {/* Enhanced Background Blur */}
             <BlurBlob
               variant="primary"
               position="top-left"
-              size={600}
+              size={700}
               animated={true}
             />
-            <div className="hidden">
-              <BlurBlob
-                variant="primary"
-                position="top-left"
-                size={600}
-                animated={true}
-              />
-            </div>
 
-            <DevImg
-              containerStyles="w-[250px]  h-[250px] md:w-[400px] md:h-[400px] xl:w-[500px] xl:h-[500px] bg-no-repeat"
-              lightbg={`${prefix}/about/shape-light.svg`}
-              bg={`${prefix}/about/shape-dark.svg`}
-              imgSrc={`${prefix}/reviews/developer.png`}
-            />
+            {/* Main Developer Image */}
+            <motion.div variants={scaleIn(0.3)} className="relative  ">
+              <DevImg
+                containerStyles="w-[300px] h-[300px] md:w-[400px] md:h-[400px]  xl:w-[500px] xl:h-[500px] bg-no-repeat relative"
+                lightbg={`${prefix}/about/shape-light.svg`}
+                bg={`${prefix}/about/shape-dark.svg`}
+                imgSrc={`${prefix}/reviews/developer.png`}
+              />
+            </motion.div>
+
+            {/* Enhanced Floating Avatars in Blob Shapes */}
             <AnimatePresence>
               {reviewData.slice(0, positions.length).map((person, index) => {
                 const isActive = index === activeIndex;
                 const positionData = positions[index];
-                // const blobPath =
-                //   blobPaths[Math.floor(Math.random() * blobPaths.length)];
-                const blobPath = blobShapes[index % blobShapes.length];
+                const blobShape = blobShapes[index % blobShapes.length];
 
                 return (
                   <motion.div
                     key={`${person.name}-${index}`}
-                    className={`absolute ${positionData.position} z-5`}
+                    className={`absolute ${positionData.position} `}
                     variants={floatIn(positionData.delay)}
                     initial="hidden"
                     animate="show"
@@ -297,11 +227,7 @@ const Review = () => {
                     }}
                   >
                     <motion.div
-                      className="relative"
-                      style={{
-                        width: `${positionData.size}px`,
-                        height: `${positionData.size}px`,
-                      }}
+                      className="relative w-14 h-14 xl:w-16 xl:h-16 "
                       animate={{
                         y: [0, -8, 0],
                         scale: isActive
@@ -322,32 +248,19 @@ const Review = () => {
                         },
                       }}
                     >
-                      {/* Blob Shape Container */}
-                      <div className="relative w-8 h-8  md:w-14  md:h-14">
+                      {/* Blob Shape SVG Container */}
+                      <div className="relative w-full h-full">
                         <svg
-                          viewBox={blobPath.viewBox}
-                          className="absolute inset-0 w-full h-full drop-shadow-xl"
+                          viewBox={blobShape.viewBox}
+                          className="absolute inset-0 w-full h-full drop-shadow-2xl"
                         >
                           <defs>
-                            <pattern
-                              id={`avatar-pattern-${index}`}
-                              patternUnits="objectBoundingBox"
-                              width="100%"
-                              height="100%"
-                            >
-                              <image
-                                href={person.avatar}
-                                x="0"
-                                y="0"
-                                width=""
-                                height=""
-                                preserveAspectRatio="xMidYMid slice"
-                                className="object-cover w-full h-full"
-                              />
-                            </pattern>
+                            <clipPath id={`blob-clip-${index}`}>
+                              <path d={blobShape.path} />
+                            </clipPath>
 
                             <linearGradient
-                              id={`blob-border-${index}`}
+                              id={`blob-gradient-${index}`}
                               x1="0%"
                               y1="0%"
                               x2="100%"
@@ -357,80 +270,108 @@ const Review = () => {
                                 offset="0%"
                                 stopColor={
                                   isActive
-                                    ? "rgb(99, 102, 241)"
-                                    : "rgba(147, 197, 253, 0.5)"
+                                    ? "rgba(99, 102, 241, 0.3)"
+                                    : "rgba(147, 197, 253, 0.2)"
                                 }
                               />
                               <stop
                                 offset="100%"
                                 stopColor={
                                   isActive
-                                    ? "rgb(168, 85, 247)"
-                                    : "rgba(196, 181, 253, 0.5)"
+                                    ? "rgba(168, 85, 247, 0.3)"
+                                    : "rgba(196, 181, 253, 0.2)"
                                 }
                               />
                             </linearGradient>
                           </defs>
-                          <g transform="translate(100 100)">
-                            {/* Avatar Image as Blob Shape */}
-                            <path
-                              d={blobPath.path}
-                              fill={`url(#avatar-pattern-${index})`}
-                              className="transition-all duration-300"
-                            />
 
-                            {/* Border/Stroke */}
-                            <path
-                              d={blobPath.path}
+                          {/* Blob Background */}
+                          <path
+                            d={blobShape.path}
+                            fill={`url(#blob-gradient-${index})`}
+                            className="transition-all duration-300"
+                          />
+
+                          {/* Avatar image inside SVG */}
+                          <image
+                            href={person.avatar}
+                            width="459"
+                            height="491"
+                            clipPath={`url(#blob-clip-${index})`}
+                            preserveAspectRatio="xMidYMid slice"
+                            className="object-cover w-full h-full scale-100"
+                          />
+
+                          {/* Active ring */}
+                          {isActive && (
+                            <motion.path
+                              d={blobShape.path}
                               fill="none"
-                              stroke={`url(#blob-border-${index})`}
-                              strokeWidth={isActive ? "6" : "3"}
-                              className="transition-all duration-300"
+                              stroke="rgb(99, 102, 241)"
+                              strokeWidth="4"
+                              initial={{ pathLength: 0, opacity: 0 }}
+                              animate={{ pathLength: 1, opacity: 1 }}
+                              transition={{ duration: 0.6, ease: "easeOut" }}
                             />
-
-                            {/* Active State Pulse Ring */}
-                            {isActive && (
-                              <motion.path
-                                d={blobPath.path}
-                                fill="none"
-                                stroke="rgb(99, 102, 241)"
-                                strokeWidth="2"
-                                opacity="0.6"
-                                initial={{ scale: 1, opacity: 0.6 }}
-                                animate={{
-                                  scale: [1, 1.1, 1],
-                                  opacity: [0.6, 0.2, 0.6],
-                                }}
-                                transition={{
-                                  duration: 2,
-                                  repeat: Infinity,
-                                  ease: "easeInOut",
-                                }}
-                                style={{ transformOrigin: "center" }}
-                              />
-                            )}
-
-                            {/* Overlay for Active State */}
-                            {isActive && (
-                              <motion.path
-                                d={blobPath.path}
-                                fill="rgba(99, 102, 241, 0.2)"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.3 }}
-                              />
-                            )}
-                          </g>
+                          )}
                         </svg>
+
+                        {/* Avatar Image with Blob Clipping */}
+                        <div
+                          className="absolute inset-2 rounded-none overflow-hidden z-30"
+                          style={{ clipPath: `url(#blob-clip-${index})` }}
+                        >
+                          {/* <img
+                            src={person.avatar}
+                            alt={person.name}
+                            className="object-cover w-full h-full scale-110"
+                          /> */}
+
+                          {/* Active Overlay */}
+                          {isActive && (
+                            <motion.div
+                              className="absolute inset-0 z-30 bg-gradient-to-br from-primary/30 via-transparent to-secondary/20"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ duration: 0.3 }}
+                            />
+                          )}
+                        </div>
+
+                        {/* Glow Effect for Active Avatar */}
+                        {/* Glow Behind (lowest) */}
+                        {isActive && (
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 blur-md -z-10"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1.2 }}
+                            transition={{ duration: 0.4 }}
+                            style={{ clipPath: `url(#blob-clip-${index})` }}
+                          />
+                        )}
 
                         {/* Name Tooltip on Hover */}
                         <motion.div
-                          className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-black/90 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 pointer-events-none shadow-lg"
-                          whileHover={{ opacity: 1, y: -2 }}
-                          transition={{ duration: 0.2 }}
+                          className={`absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full text-xs text-center font-medium backdrop-blur-md border transition-all duration-300 ${
+                            isActive
+                              ? "bg-white/20 border-blue-200 text-foreground shadow-lg"
+                              : "bg-white/20 border-slate-200 text-slate-600 opacity-0 group-hover:opacity-100"
+                          }`}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{
+                            opacity: isActive ? 1 : 0,
+                            y: isActive ? 0 : 10,
+                          }}
+                          transition={{ duration: 0.3 }}
                         >
                           {person.name}
-                          <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 rotate-45 -mt-1"></div>
+                          {isActive && (
+                            <motion.div
+                              className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full"
+                              animate={{ scale: [1, 1.2, 1] }}
+                              transition={{ duration: 1, repeat: Infinity }}
+                            />
+                          )}
                         </motion.div>
                       </div>
                     </motion.div>
@@ -438,76 +379,156 @@ const Review = () => {
                 );
               })}
             </AnimatePresence>
+
             {/* Decorative Elements */}
             {/* <motion.div
               variants={fadeInUp(1)}
-              className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-xl"
+              className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-xl"
             /> */}
             {/* <motion.div
               variants={fadeInUp(1.2)}
               className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-tr from-secondary/15 to-primary/15 rounded-full blur-2xl"
             /> */}
-          </div>
-          {/* swiper */}
-          <div className="flex-1 lg:flex-2 ">
-            {/* text */}
-            <div className="text-[10px] uppercase font-semibold text-light-text tracking-[1px]  dark:text-white text-left">
-              WHAT PEOPLE SAY ABOUT ME
+          </motion.div>
+
+          {/* Right Side - Content */}
+          <motion.div variants={slideInRight()} className="flex-2 space-y-8">
+            {/* Section Header */}
+            <div className="space-y-1 lg:space-y-4">
+              <motion.div
+                variants={textReveal()}
+                className="text-[10px] lg:text-sm font-semibold tracking-wider  uppercase"
+              >
+                WHAT PEOPLE SAY ABOUT ME
+              </motion.div>
+
+              <motion.h2
+                variants={textReveal(0.1)}
+                className="text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary  bg-clip-text text-transparent leading-tight"
+              >
+                Testimonial
+              </motion.h2>
+
+              {/* <motion.p
+                variants={fadeInUp(0.2)}
+                className="text-lg text-muted-foreground max-w-lg"
+              >
+                Discover how I've helped businesses transform their digital
+                presence and achieve remarkable results.
+              </motion.p> */}
             </div>
-            <h2 className="mb-6 text-5xl font-bold text-left text-primary xl:mb-24">
-              Testimonial
-            </h2>
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={30}
-              loop={true}
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
-              pagination={{ clickable: true }}
-              modules={[Pagination, Autoplay]}
-              className="xl:max-w-3xl md:max-w-md"
-              onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
+
+            {/* Enhanced Swiper */}
+
+            {/* Quote Icon */}
+            <motion.div
+              className="absolute -left-20 bottom-0 p-4 text-primary blur-sm "
+              // whileHover={{ scale: 1.1, rotate:  180 }}
+              // transition={{ duration: 0.3 }}
             >
-              {reviewData.map((person, index) => {
-                const initial = person.name.split(" ")[0][0];
-                return (
-                  <SwiperSlide key={index}>
+              {/* <svg
+                    className="w-20 h-20  text-primary opacity-10 rotate-180 hover:opacity-0"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg> */}
+              <BsChatQuoteFill className="w-96 h-96 opacity-10" />
+            </motion.div>
+            <motion.div variants={revealUp(0.3)}>
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
+                pagination={{
+                  clickable: true,
+                  bulletActiveClass:
+                    "swiper-pagination-bullet-active !bg-primary",
+                  bulletClass:
+                    "swiper-pagination-bullet !bg-gray-300 dark:!bg-gray-600",
+                }}
+                modules={[Pagination, Autoplay]}
+                className="testimonial-swiper max-w-2xl "
+                onRealIndexChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              >
+                {reviewData.map((person, index) => (
+                  <SwiperSlide key={`${person.name}-slide-${index}`}>
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
+                      exit={{ opacity: 0, y: -30 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
                     >
-                      <Card className="bg-tertiary/40 dark:secondary/40 p-6 xl:p-10 mx-auto min-h-[500px]  ">
-                        <CardDescription className="mb-2 text-xl font-light text-muted-foreground">
-                          <span className="font-mono text-4xl font-bold">
-                            "
-                          </span>
+                      <Card className="group relative bg-transparent backdrop-blur-3xl border-0  transition-all duration-500 p-8 xl:p-10   ">
+                        <CardDescription className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-2">
                           {person.comment}
-                          <span className="font-mono text-3xl font-bold">
-                            "
-                          </span>
                         </CardDescription>
-                        <CardFooter className="w-[100px] h-[2px] bg-primary p-[2px] rounded-full"></CardFooter>
-                        <CardHeader className="mt-4 -ml-4">
-                          <div className="flex items-center gap-x-2">
-                            <div className="flex-2">
-                              <div className="text-lg font-semibold text-light-muted dark:text-white">
-                                {person.name}
-                              </div>
-                              <div className="text-[12px] capitalize font-semibold text-light-secondary tracking-[1px]  dark:text-white">
-                                {person.title}
-                              </div>
-                            </div>
+
+                        {/* Rating */}
+
+                        <div className="inline-flex items-center gap-2 bg-transparent rounded-full px-4 py-2 mb-2">
+                          <StarRating rating={person.rating} />
+                          <span className="text-sm font-semibold ">
+                            {person.rating.toFixed(1)}
+                          </span>
+                        </div>
+
+                        {/* Accent Line */}
+                        <CardFooter className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mb-6 p-0" />
+
+                        {/* Author Info */}
+                        <CardHeader className="p-0 space-y-1">
+                          <div className="font-semibold text-lg text-gray-900 dark:text-white">
+                            {person.name}
+                          </div>
+                          <div className="text-primary font-medium">
+                            {person.title}
+                          </div>
+                          <div className="text-sm text-muted-foreground">
+                            {person.company} • {person.date}
                           </div>
                         </CardHeader>
+
+                        {/* Hover Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-lg pointer-events-none" />
                       </Card>
                     </motion.div>
                   </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
+                ))}
+              </Swiper>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Custom Swiper Styles */}
+      <style jsx global>{`
+        .testimonial-swiper .swiper-pagination {
+          position: relative !important;
+          margin-top: 2rem;
+        }
+
+        .testimonial-swiper .swiper-pagination-bullet {
+          width: 12px !important;
+          height: 12px !important;
+          opacity: 0.5 !important;
+          transition: all 0.3s ease !important;
+        }
+
+        .testimonial-swiper .swiper-pagination-bullet-active {
+          opacity: 1 !important;
+          transform: scale(1.2) !important;
+        }
+
+        .shadow-3xl {
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+      `}</style>
     </motion.section>
   );
 };
