@@ -176,51 +176,42 @@ const Work = () => {
         </motion.div>
 
         {/* swiper */}
-        <div className="w-full xl:max-w-[1100px]">
+        <div className="w-full xl:max-w-[1100px] overflow-hidden [mask-image:linear-gradient(to_right,transparent,blue_10%,blue_90%,transparent)]">
           <Swiper
             className="min-h-[520px]"
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-              },
-              640: {
-                slidesPerView: 1.2,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 2.5,
-              },
-            }}
-            spaceBetween={20}
-            pagination={{ clickable: true }}
+            slidesPerView="auto"
+            spaceBetween={24}
             loop={true}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            modules={[Pagination, Autoplay]}
+            speed={2000}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
+            }}
+            modules={[Autoplay]}
+            allowTouchMove={false}
           >
-            {projectData.slice(0, 4).map((project, index) => {
-              
-
-              return (
+            {projectData.slice(0, 8).map((project, index) => (
+              <SwiperSlide
+                key={index}
+                className="!w-72 md:!w-80 flex-shrink-0 " // force fixed width slides
+              >
                 <motion.div
-                  initial={{ opacity: 0, y: -50 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative flex-shrink-0 h-auto mx-4 group w-80"
+                  className="relative group h-auto"
                 >
-                  <SwiperSlide key={index}>
-                    <ProjectCard
-                      project={{
-                        ...project,
-                        image: `${prefix}${project.image}`,
-                      }}
-                    />
-                  </SwiperSlide>
+                  <ProjectCard
+                    project={{
+                      ...project,
+                      image: `${prefix}${project.image}`,
+                    }}
+                  />
                 </motion.div>
-              );
-            })}
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

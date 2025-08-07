@@ -198,7 +198,7 @@ const Review = () => {
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.2 }}
       className="relative py-20 xl:py-32 scroll-mt-20 "
     >
       {/* Background Elements */}

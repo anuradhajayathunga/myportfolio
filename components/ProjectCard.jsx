@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => {
         />
 
         {/* Overlay Actions */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 transition-opacity duration-300 opacity-0 bg-black/30 group-hover:opacity-100">
+        <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 transition-opacity duration-300 opacity-0 bg-black/30 group-hover:opacity-100 cursor-pointer">
           {project.preview && (
             <Link
               href={project.preview}
