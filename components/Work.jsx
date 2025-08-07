@@ -141,7 +141,7 @@ const Work = () => {
           <motion.div variants={slideInLeft(0.2)} className="">
             <motion.div
               variants={fadeInUp(0.2)}
-              className="text-[10px] uppercase font-semibold tracking-wider"
+              className="text-[12px]  lg:text-sm font-semibold tracking-wider  uppercase"
             >
               Projects I’ve Designed & Built
             </motion.div>
@@ -149,7 +149,7 @@ const Work = () => {
               variants={textReveal(0.1)}
               className="mb-4 text-4xl font-bold md:text-5xl "
             >
-              <span className="text-transparent text-bold bg-gradient-to-r from-primary to-secondary bg-clip-text">
+              <span className="text-4xl xl:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Portfolio{" "}
               </span>
             </motion.h2>

@@ -204,7 +204,7 @@ const Review = () => {
       {/* Background Elements */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 dark:from-primary/10 dark:to-secondary/10" /> */}
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 xl:gap-20 items-center ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 xl:gap-20 items-center ">
           {/* Left Side - Image with Floating Avatars */}
           <motion.div
             variants={slideInLeft()}
@@ -416,17 +416,17 @@ const Review = () => {
             className="flex-2 space-y-8 w-full xl:max-w-[1100px]"
           >
             {/* Section Header */}
-            <div className="space-y-1 text-center lg:text-left lg:space-y-4">
+            <div className="space-y-0 text-center lg:text-left lg:space-y-4">
               <motion.div
                 variants={textReveal()}
-                className="text-[10px]  lg:text-sm font-semibold tracking-wider  uppercase"
+                className="text-[12px]  lg:text-sm font-semibold tracking-wider  uppercase"
               >
                 WHAT PEOPLE SAY ABOUT ME
               </motion.div>
 
               <motion.h2
                 variants={textReveal(0.1)}
-                className="text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary  bg-clip-text text-transparent leading-tight"
+                className="text-4xl xl:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
               >
                 Testimonial
               </motion.h2>

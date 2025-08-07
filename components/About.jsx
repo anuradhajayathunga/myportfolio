@@ -159,7 +159,7 @@ const About = () => {
           >
             <motion.div
               variants={fadeInUp(0.2)}
-              className="text-[10px] uppercase font-semibold tracking-[1px] "
+              className="text-[12px]  lg:text-sm font-semibold tracking-wider  uppercase"
             >
               LET ME INTRODUCE MYSELF
             </motion.div>

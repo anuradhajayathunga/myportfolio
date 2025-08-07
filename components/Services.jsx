@@ -100,7 +100,7 @@ const Services = () => {
           <div className="text-center xl:text-left">
             <motion.div
               variants={fadeInUp(0.2)}
-              className="text-[10px]  font-semibold  tracking-wider capitalize"
+              className="text-[12px]  lg:text-sm font-semibold tracking-wider  uppercase"
             >
               WHAT I WILL DO FOR YOU
             </motion.div>
