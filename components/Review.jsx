@@ -30,9 +30,9 @@ import {
   cardHover,
 } from "@/lib/motionVariants";
 import { BsChatQuoteFill } from "react-icons/bs";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { useIsMobile } from "../hooks/useIsMobile";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
-import { positions } from "@/lib/positions";
+import { positions } from "../lib/positions"; 
 const reviewData = [
   {
     avatar: `${prefix}/reviews/avatar-5.png`,
