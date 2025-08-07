@@ -30,7 +30,7 @@ import {
   cardHover,
 } from "@/lib/motionVariants";
 import { BsChatQuoteFill } from "react-icons/bs";
-
+import { useIsMobile } from "@/hooks/useIsMobile";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
 const reviewData = [
@@ -94,28 +94,11 @@ const reviewData = [
     date: "October 2023",
     rating: 5,
   },
-  {
-    avatar: `${prefix}/reviews/avatar-6.png`,
-    name: "Robert K.",
-    title: "CTO",
-    company: "TechInnovate",
-    comment:
-      "Professional and reliable! The design system they created has become the foundation of our entire product suite. Clean, scalable, and perfectly documented. Highly recommended for any serious project.",
-    date: "October 2023",
-    rating: 5,
-  },
 ];
 
 // Enhanced floating positions with more dynamic placement
-const positions = [
-  { position: "top-4 left-8 ", scale: 1.0, delay: 0 },
-  { position: "top-12 right-12 ", scale: 0.9, delay: 0.1 },
-  { position: "top-32 left-4 lg:left-24 -z-10 ", scale: 0.8, delay: 0.2 },
-  { position: "top-48 right-8", scale: 0.85, delay: 0.3 },
-  { position: "top-20 left-1/2 -translate-x-1/2", scale: 0.9, delay: 0.4 },
-  { position: "top-72 lg:top-64 right-24 -z-10  ", scale: 0.75, delay: 0.5 },
-  { position: "-top-10 left-1/2 -z-10", scale: 0.75, delay: 0.5 },
-];
+import { positions } from "@/lib/positions";
+
 const blobShapes = [
   // {
   //   viewBox: "0 0 505 505",
@@ -125,13 +108,14 @@ const blobShapes = [
   //   viewBox: "0 0 505 505",
   //   path: "M304.32 452.526C235.082 490.701 145.401 505.671 89.759 470.553C34.2055 435.103 13.0224 349.654 4.57418 269.744C-3.96273 190.165 0.235096 116.126 38.4741 68.9353C76.8018 21.4138 149.679 0.168287 225.796 0C301.493 0.073637 380.607 20.5629 422.153 72.4682C463.611 124.704 467.59 208.026 445.016 280.332C422.685 353.059 373.559 414.35 304.32 452.526Z",
   // },
-  // {
-  //   viewBox: "0 0 509 462",
-  //   path: "M430.684 91.8476C485.587 148.958 523.332 231.872 503.773 294.831C483.871 357.79 406.664 400.451 331.516 429.351C256.711 458.25 183.965 473.388 128.376 448.617C72.4443 423.846 32.983 358.822 13.0808 285.198C-6.47826 211.917 -7.16455 130.036 32.2967 76.3658C72.1011 22.6955 151.71 -2.76337 227.544 0.332983C303.722 3.08531 375.781 34.7369 430.684 91.8476Z",
-  // },
+
   {
     viewBox: "0 0 213 197",
     path: "  M187.72 169.75C158.2 200.02 116.58 196.61 111.02 196.07C68.96 191.95 44.61 160.48 27.89 138.87C13.1 119.75 -2.50001 99.5999 0.539988 73.1499C3.70999 45.4899 25.25 28.3499 33.22 21.9899C77.84 -13.5501 136.06 4.75992 139.8 5.99992C149.8 9.31992 176.36 18.1399 194.51 44.3699C218.83 79.5099 220.94 135.69 187.72 169.75Z",
+  },
+  {
+    viewBox: "0 0 509 462",
+    path: "M430.684 91.8476C485.587 148.958 523.332 231.872 503.773 294.831C483.871 357.79 406.664 400.451 331.516 429.351C256.711 458.25 183.965 473.388 128.376 448.617C72.4443 423.846 32.983 358.822 13.0808 285.198C-6.47826 211.917 -7.16455 130.036 32.2967 76.3658C72.1011 22.6955 151.71 -2.76337 227.544 0.332983C303.722 3.08531 375.781 34.7369 430.684 91.8476Z",
   },
   // {
   //   viewBox: "0 0 480 480",
@@ -141,7 +125,7 @@ const blobShapes = [
 // Star rating component
 const StarRating = ({ rating }) => {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 ">
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
@@ -168,7 +152,7 @@ const StarRating = ({ rating }) => {
 const Review = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { theme } = useTheme();
-
+  const isMobile = useIsMobile();
   return (
     <motion.section
       id="review"
@@ -176,30 +160,31 @@ const Review = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      className="relative py-20 xl:py-32 scroll-mt-20 overflow-hidden"
+      className="relative py-20 xl:py-32 scroll-mt-20 "
     >
       {/* Background Elements */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 dark:from-primary/10 dark:to-secondary/10" /> */}
-
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 xl:gap-20 items-center">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 xl:gap-20 items-center ">
           {/* Left Side - Image with Floating Avatars */}
           <motion.div
             variants={slideInLeft()}
-            className="relative flex-1 justify-center lg:justify-start max-w-sm lg:max-w-lg"
+            className="relative flex-1 flex justify-center lg:justify-start "
           >
             {/* Enhanced Background Blur */}
-            <BlurBlob
-              variant="primary"
-              position="top-left"
-              size={700}
-              animated={true}
-            />
+            <div className="relative hidden lg:block">
+              <BlurBlob
+                variant="primary"
+                position="top-left"
+                size={700}
+                animated
+              />
+            </div>
 
             {/* Main Developer Image */}
             <motion.div variants={scaleIn(0.3)} className="relative  ">
               <DevImg
-                containerStyles="w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] xl:w-[500px] xl:h-[500px]"
+                containerStyles="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] xl:w-[500px] xl:h-[500px]"
                 lightbg={`${prefix}/about/shape-light.svg`}
                 bg={`${prefix}/about/shape-dark.svg`}
                 imgSrc={`${prefix}/reviews/developer.png`}
@@ -210,14 +195,20 @@ const Review = () => {
             <AnimatePresence>
               {reviewData.slice(0, positions.length).map((person, index) => {
                 const isActive = index === activeIndex;
-                const positionData = positions[index];
+                const pos = positions[index];
+                const positionClass = isMobile
+                  ? pos.position.base
+                  : pos.position.md;
+                const size = isMobile ? pos.size.base : pos.size.md;
                 const blobShape = blobShapes[index % blobShapes.length];
 
                 return (
                   <motion.div
                     key={`${person.name}-${index}`}
-                    className={`absolute ${positionData.position} `}
-                    variants={floatIn(positionData.delay)}
+                    className={`absolute ${positionClass} ${
+                      index > 6 ? "hidden md:block " : ""
+                    }`}
+                    variants={floatIn(pos.delay)}
                     initial="hidden"
                     animate="show"
                     whileHover={{
@@ -227,12 +218,11 @@ const Review = () => {
                     }}
                   >
                     <motion.div
-                      className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 xl:w-20 xl:h-20"
+                      className="relative"
+                      style={{ width: size, height: size }}
                       animate={{
                         y: [0, -8, 0],
-                        scale: isActive
-                          ? positionData.scale * 1.1
-                          : positionData.scale,
+                        scale: isActive ? pos.scale * 1.1 : pos.scale,
                       }}
                       transition={{
                         y: {
@@ -242,13 +232,9 @@ const Review = () => {
                           delay: index * 0.5,
                           ease: "easeInOut",
                         },
-                        scale: {
-                          duration: 0.4,
-                          ease: "easeOut",
-                        },
+                        scale: { duration: 0.4, ease: "easeOut" },
                       }}
                     >
-                      {/* Blob Shape SVG Container */}
                       <div className="relative w-full h-full">
                         <svg
                           viewBox={blobShape.viewBox}
@@ -258,7 +244,6 @@ const Review = () => {
                             <clipPath id={`blob-clip-${index}`}>
                               <path d={blobShape.path} />
                             </clipPath>
-
                             <linearGradient
                               id={`blob-gradient-${index}`}
                               x1="0%"
@@ -285,24 +270,21 @@ const Review = () => {
                             </linearGradient>
                           </defs>
 
-                          {/* Blob Background */}
                           <path
                             d={blobShape.path}
                             fill={`url(#blob-gradient-${index})`}
                             className="transition-all duration-300"
                           />
 
-                          {/* Avatar image inside SVG */}
                           <image
                             href={person.avatar}
                             width="459"
                             height="491"
                             clipPath={`url(#blob-clip-${index})`}
                             preserveAspectRatio="xMidYMid slice"
-                            className="object-cover w-full h-full opacity-50 hover:opacity-100 transition-all duration-300"
+                            className="object-cover w-full h-full"
                           />
 
-                          {/* Active ring */}
                           {isActive && (
                             <motion.path
                               d={blobShape.path}
@@ -316,18 +298,10 @@ const Review = () => {
                           )}
                         </svg>
 
-                        {/* Avatar Image with Blob Clipping */}
                         <div
-                          className="absolute inset-2 rounded-none overflow-hidden z-30"
+                          className="absolute inset-2 overflow-hidden"
                           style={{ clipPath: `url(#blob-clip-${index})` }}
                         >
-                          {/* <img
-                            src={person.avatar}
-                            alt={person.name}
-                            className="object-cover w-full h-full scale-110"
-                          /> */}
-
-                          {/* Active Overlay */}
                           {isActive && (
                             <motion.div
                               className="absolute inset-0 z-30 bg-gradient-to-br from-primary/30 via-transparent to-secondary/20"
@@ -338,11 +312,9 @@ const Review = () => {
                           )}
                         </div>
 
-                        {/* Glow Effect for Active Avatar */}
-                        {/* Glow Behind (lowest) */}
                         {isActive && (
                           <motion.div
-                            className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 blur-md -z-10"
+                            className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 blur-md"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1.2 }}
                             transition={{ duration: 0.4 }}
@@ -350,7 +322,6 @@ const Review = () => {
                           />
                         )}
 
-                        {/* Name Tooltip on Hover */}
                         <motion.div
                           className={`absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full text-xs text-center font-medium backdrop-blur-md border transition-all duration-300 ${
                             isActive
@@ -367,7 +338,7 @@ const Review = () => {
                           {person.name}
                           {isActive && (
                             <motion.div
-                              className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full"
+                              className="absolute -top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-blue-500 rounded-full"
                               animate={{ scale: [1, 1.2, 1] }}
                               transition={{ duration: 1, repeat: Infinity }}
                             />
@@ -392,12 +363,15 @@ const Review = () => {
           </motion.div>
 
           {/* Right Side - Content */}
-          <motion.div variants={slideInRight()} className="flex-2 space-y-8">
+          <motion.div
+            variants={slideInRight()}
+            className="flex-2 space-y-8 w-full xl:max-w-[1100px]"
+          >
             {/* Section Header */}
-            <div className="space-y-1 lg:space-y-4">
+            <div className="space-y-1 text-center lg:text-left lg:space-y-4">
               <motion.div
                 variants={textReveal()}
-                className="text-[10px] lg:text-sm font-semibold tracking-wider  uppercase"
+                className="text-[10px]  lg:text-sm font-semibold tracking-wider  uppercase"
               >
                 WHAT PEOPLE SAY ABOUT ME
               </motion.div>
@@ -423,8 +397,8 @@ const Review = () => {
             {/* Quote Icon */}
             <motion.div
               className="absolute -left-20 bottom-0 p-4 text-primary blur-sm "
-              whileHover={{ scale: 1.1, rotate:  180 }}
-              transition={{ duration: 0.3 }}
+              // whileHover={{ scale: 1.1, rotate:  180 }}
+              // transition={{ duration: 0.3 }}
             >
               {/* <svg
                     className="w-20 h-20  text-primary opacity-10 rotate-180 hover:opacity-0"
@@ -433,7 +407,7 @@ const Review = () => {
                   >
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg> */}
-              <BsChatQuoteFill className="w-96 h-96 opacity-10" />
+              <BsChatQuoteFill className="w-40  h-40 lg:w-96 lg:h-96 opacity-10" />
             </motion.div>
             <motion.div variants={revealUp(0.3)}>
               <Swiper

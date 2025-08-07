@@ -6,7 +6,7 @@ const DevImg = ({ containerStyles, lightbg, bg, imgSrc }) => {
       {/* Background blob layer */}
       {/* Light mode background */}
       <div
-        className="absolute inset-0 bg-no-repeat bg-bottom opacity-40   z-[-1] dark:hidden"
+        className="absolute inset-0 bg-no-repeat bg-bottom opacity-40   -z-10 dark:hidden"
         style={{
           backgroundImage: `url(${lightbg})`,
           backgroundSize: "contain",
@@ -15,7 +15,7 @@ const DevImg = ({ containerStyles, lightbg, bg, imgSrc }) => {
 
       {/* Dark mode background */}
       <div
-        className="absolute inset-0 bg-no-repeat bg-bottom opacity-30    z-[-1] hidden dark:block"
+        className="absolute inset-0 bg-no-repeat bg-bottom opacity-30     -z-10 hidden dark:block"
         style={{ backgroundImage: `url(${bg})`, backgroundSize: "contain" }}
       />
 
@@ -25,7 +25,7 @@ const DevImg = ({ containerStyles, lightbg, bg, imgSrc }) => {
         alt="Blurred Shadow"
         fill
         priority
-        className="object-contain blur-3xl opacity-50 dark:opacity-30 scale-105  z-[-1]"
+        className="object-contain blur-3xl opacity-50 dark:opacity-30 scale-105  z-20"
       />
 
       {/* Foreground image */}
@@ -34,7 +34,7 @@ const DevImg = ({ containerStyles, lightbg, bg, imgSrc }) => {
         alt="Developer"
         fill
         priority
-        className="z-40 object-contain"
+        className="object-contain z-20"
       />
     </div>
   );
