@@ -33,30 +33,30 @@ import { BsChatQuoteFill } from "react-icons/bs";
 import { useIsMobile } from "../hooks/useIsMobile";
 const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
 
- const positions = [
+const positions = [
   {
     position: { base: "top-24 left-2 ", md: "top-32 left-8" },
     size: { base: 72, md: 80 },
-    scale: 1.0,
+    scale: 1.1,
     delay: 0,
   },
   {
     position: { base: "top-8 right-12", md: "top-12 right-12" },
     size: { base: 48, md: 60 },
-    scale: 0.95,
-    delay: 0.1,
+    scale: 0.9,
+    delay: 0.2,
   },
   {
     position: { base: "top-4 left-8", md: "top-4 left-16 -z-20" },
     size: { base: 40, md: 56 },
-    scale: 0.85,
-    delay: 0.2,
+    scale: 1.0,
+    delay: 0.4,
   },
   {
     position: { base: "top-36 right-4", md: "top-48 right-8" },
     size: { base: 56, md: 72 },
-    scale: 0.9,
-    delay: 0.3,
+    scale: 1.1,
+    delay: 0.6,
   },
   {
     position: {
@@ -64,14 +64,14 @@ const prefix = process.env.NODE_ENV === "production" ? "/myportfolio" : "";
       md: "-top-10 left-1/2 -translate-x-1/2 -z-20",
     },
     size: { base: 56, md: 72 },
-    scale: 0.95,
-    delay: 0.4,
+    scale: 0.9,
+    delay: 0.8,
   },
   {
     position: { base: "top-64 right-13", md: "top-72 right-24 -z-20" },
     size: { base: 36, md: 48 },
-    scale: 0.8,
-    delay: 0.5,
+    scale: 1.0,
+    delay: 1.0,
   },
 ];
 
@@ -198,7 +198,7 @@ const Review = () => {
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.3 }}
       className="relative py-20 xl:py-32 scroll-mt-20 "
     >
       {/* Background Elements */}
@@ -399,8 +399,15 @@ const Review = () => {
               variants={fadeInUp(1.2)}
               className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-tr from-secondary/15 to-primary/15 rounded-full blur-2xl"
             /> */}
-            <div className="absolute -top-6 -right-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-secondary rounded-full opacity-60 blur-sm " />
-            <div className="absolute -bottom-6 -left-6 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-secondary to-primary rounded-full opacity-40 blur-sm" />
+
+            <motion.div
+              variants={floatIn(1)}
+              className="absolute -top-6 -right-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-secondary rounded-full opacity-60 blur-sm "
+            />
+            <motion.div
+              variants={floatIn(1.2)}
+              className="absolute -bottom-6 -left-6 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-secondary to-primary rounded-full opacity-40 blur-sm"
+            />
           </motion.div>
 
           {/* Right Side - Content */}
