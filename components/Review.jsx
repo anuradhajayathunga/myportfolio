@@ -28,6 +28,7 @@ import {
   textReveal,
   floatIn,
   cardHover,
+  fadeIn,
 } from "@/lib/motionVariants";
 import { BsChatQuoteFill } from "react-icons/bs";
 import { useIsMobile } from "../hooks/useIsMobile";
@@ -38,7 +39,7 @@ const positions = [
     position: { base: "top-24 left-2 ", md: "top-32 left-8" },
     size: { base: 72, md: 80 },
     scale: 1.1,
-    delay: 0,
+    delay: 0.1,
   },
   {
     position: { base: "top-8 right-12", md: "top-12 right-12" },
@@ -196,9 +197,6 @@ const Review = () => {
     <motion.section
       id="review"
       variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
       className="relative py-20 xl:py-32 scroll-mt-20 "
     >
       {/* Background Elements */}
@@ -208,8 +206,12 @@ const Review = () => {
           {/* Left Side - Image with Floating Avatars */}
           <motion.div
             variants={slideInLeft()}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.6 }}
             className="relative flex-1 flex justify-center lg:justify-start max-w-lg "
           >
+            <motion.div className=""></motion.div>
             {/* Enhanced Background Blur */}
             <div className="relative hidden md:block">
               <BlurBlob
@@ -221,7 +223,7 @@ const Review = () => {
             </div>
 
             {/* Main Developer Image */}
-            <motion.div variants={scaleIn(0.3)} className="relative  ">
+            <motion.div variants={scaleIn(0.1)} className="relative  ">
               <DevImg
                 containerStyles="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] xl:w-[500px] xl:h-[500px]"
                 lightbg={`${prefix}/about/shape-light.svg`}
@@ -413,12 +415,15 @@ const Review = () => {
           {/* Right Side - Content */}
           <motion.div
             variants={slideInRight()}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
             className="flex-2 space-y-8 w-full xl:max-w-[1100px]"
           >
             {/* Section Header */}
             <div className="space-y-0 text-center lg:text-left lg:space-y-0">
               <motion.div
-                variants={textReveal()}
+                variants={textReveal(0.2)}
                 className="text-[12px]  lg:text-sm font-semibold tracking-wider  uppercase"
               >
                 WHAT PEOPLE SAY ABOUT ME
@@ -444,7 +449,8 @@ const Review = () => {
 
             {/* Quote Icon */}
             <motion.div
-              className="absolute -left-20 bottom-0 p-4 text-primary blur-sm "
+              variants={fadeIn(0.5)}
+              className=" p-4 "
               // whileHover={{ scale: 1.1, rotate:  180 }}
               // transition={{ duration: 0.3 }}
             >
@@ -455,9 +461,9 @@ const Review = () => {
                   >
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg> */}
-              <BsChatQuoteFill className="w-40  h-40 lg:w-96 lg:h-96 opacity-10" />
+              <BsChatQuoteFill className="w-40  h-40 lg:w-96 lg:h-96 opacity-10 text-primary blur-sm absolute -left-20 bottom-0" />
             </motion.div>
-            <motion.div variants={revealUp(0.3)}>
+            <motion.div variants={revealUp(0.4)}>
               <Swiper
                 slidesPerView={1}
                 spaceBetween={30}

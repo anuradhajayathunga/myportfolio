@@ -182,7 +182,7 @@ const Work = () => {
             slidesPerView="auto"
             spaceBetween={24}
             loop={true}
-            speed={2000}
+            speed={4000}
             autoplay={{
               delay: 0,
               disableOnInteraction: false,
