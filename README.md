@@ -9,7 +9,7 @@
 
 **A modern, responsive web application built with Next.js**
 
-[🌟 Live Demo](https://anuradhajaya.vercel.app/) • [📖 Documentation]() • [🐛 Report Bug]() • [✨ Request Feature]()
+[🌟 Live Demo](https://anuradhaportfolio.vercel.app/) • [📖 Documentation]() • [🐛 Report Bug]() • [✨ Request Feature]()
 
 🔗 **Live Demo:** [yourapp.vercel.app](https://yourapp.vercel.app)
 
